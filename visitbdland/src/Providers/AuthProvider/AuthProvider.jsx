@@ -1,11 +1,10 @@
 import { createContext, useEffect, useState } from 'react';
 export let AuthContex = createContext(null)
 import { FacebookAuthProvider, GoogleAuthProvider, updateProfile , createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
-
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import app from '../Firebase/firebase.config';
 import Swal from 'sweetalert2';
+import app from '../Firebase/Firebase.config';
+import { toast } from 'react-toastify';
 
 
 
