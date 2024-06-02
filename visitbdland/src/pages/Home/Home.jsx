@@ -1,9 +1,12 @@
 import React from 'react';
+import Banner from '../Banner/Banner';
+import TorismTravelSection from '../Torism and travel section/TorismTravelSection';
 
 const Home = () => {
     return (
         <div>
-            <h1>This is home components</h1>
+            <Banner/>
+            <TorismTravelSection/>
         </div>
     );
 };
