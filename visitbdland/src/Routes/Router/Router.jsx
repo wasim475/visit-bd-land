@@ -9,6 +9,8 @@ import ContactUs from "../../Components/NavItems/ContactUs/ContactUs";
 import Login from "../../Components/NavItems/Login/Login";
 import Register from "../../Components/NavItems/Register/Register";
 import Dashboard from "../../Components/NavItems/Dashboard/Dashboard";
+import Packages from "../../pages/Torism and travel section/Packages/Packages";
+import SinglePackage from "../../pages/Torism and travel section/Packages/SinglePackage";
 
 
 const router = createBrowserRouter([
@@ -48,6 +50,10 @@ const router = createBrowserRouter([
         {
           path: '/dashboard',
           element: <Dashboard></Dashboard>
+        },
+        {
+          path: '/packages/:id',
+          element: <SinglePackage></SinglePackage>
         },
       ]
     },

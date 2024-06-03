@@ -1,0 +1,29 @@
+[
+    {
+      "id": 1,
+      "image": "https://i.ibb.co/NTTpf6r/ashique-anan-abir-sa-Enr4o-J950-unsplash.jpg",
+      "tourType": "Adventure",
+      "title": "Explore the Sundarbans",
+      "price": "$500",
+      "wishlist": false,
+      "button": "View Package"
+    },
+    {
+      "id": 2,
+      "image": "https://i.ibb.co/SKC7SYL/keith-luke-s-PU2kz-PIf28-unsplash.jpg",
+      "tourType": "Beach",
+      "title": "Relax at Cox's Bazar",
+      "price": "$300",
+      "wishlist": false,
+      "button": "View Package"
+    },
+    {
+      "id": 3,
+      "image": "https://i.ibb.co/Yp1799G/salman-preeom-m-O1-ud-D5i-Cs-unsplash.jpg",
+      "tourType": "Cultural",
+      "title": "Dhaka City Tour",
+      "price": "$150",
+      "wishlist": false,
+      "button": "View Package"
+    }
+  ]

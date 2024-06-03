@@ -6,6 +6,7 @@ import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import HeadingTitle from '../../Components/Re-use componets/Heading and title/HeadingTitle';
 import OverView from './OverView/OverView';
+import Packages from './Packages/Packages';
 
 const TorismTravelSection = () => {
     const [value, setValue] = React.useState('1');
@@ -29,8 +30,15 @@ const TorismTravelSection = () => {
             <Tab label="Meet Our Tour Guides" value="3" />
           </TabList>
         </Box>
-        <TabPanel value="1"><OverView/></TabPanel>
-        <TabPanel value="2">Our Packages</TabPanel>
+        
+        <TabPanel value="1">
+          <OverView/>
+        </TabPanel>
+
+        <TabPanel value="2">
+          <Packages/>
+        </TabPanel>
+
         <TabPanel value="3">Meet Our Tour Guides</TabPanel>
       </TabContext>
     </Box>
