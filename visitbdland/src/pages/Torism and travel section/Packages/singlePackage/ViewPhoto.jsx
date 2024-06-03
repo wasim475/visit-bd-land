@@ -1,6 +1,7 @@
 import React from 'react';
 
-const SinglePackage = () => {
+const ViewPhoto = ({photo}) => {
+    let {image}= photo
     return (
         <div>
             
@@ -8,4 +9,4 @@ const SinglePackage = () => {
     );
 };
 
-export default SinglePackage;
+export default ViewPhoto;
