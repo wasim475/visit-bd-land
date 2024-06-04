@@ -1,6 +1,9 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import ViewPhoto from "./ViewPhoto";
 import HeadingTitle from "../../../../Components/Re-use componets/Heading and title/HeadingTitle"
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
 
 // Mui===================
 import * as React from 'react';
@@ -18,6 +21,8 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ViewTourInfo from "./ViewTourInfo";
 import ViewGuide from "./ViewGuide";
+import { AuthContex } from "../../../../Providers/AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 // mui================
 
@@ -45,6 +50,58 @@ const SinglePackage = () => {
     let {image,tourType,title,price,gallery, TourDetails,Contents}= packs;
 
 // console.log(guides);
+let { user } = React.useContext(AuthContex);
+const [startDate, setStartDate] = React.useState(new Date());
+// console.log("users info",user);
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const date = form.ddate.value;
+  const price = form.price.value;
+  const guideName = form.guideName.value;
+  const userEmail = form.userEmail.value;
+  const userName = form.userName.value;
+  const photoUrl = form.photoUrl.value;
+
+  const BookingData = {
+    date,
+    guideName,
+    price,
+    userEmail,
+    userName,
+    photoUrl
+  };
+
+  fetch("https://visit-bd-land-server.vercel.app/bookings", {
+    method: "POST",
+    headers: {
+      "content-type": "application/json"
+    },
+    body: JSON.stringify(BookingData)
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      if (data.insertedId) {
+        Swal.fire({
+          title: "Success!",
+          text: "Confirm your Booking”",
+          icon: "success",
+          confirmButtonText: "Exit"
+        });
+        form.guideName.value = "";
+        // form.FoodCategory.value = "";
+        // form.shortDescription.value = "";
+        form.price.value = "";
+        // form.countryName.value = "";
+        form.date.value = "";
+      //   form.userEmail.value = "";
+      //   form.userName.value = "";
+        form.photoUrl.value = "";
+      }
+    });
+};
   
     return (
         <>
@@ -208,7 +265,117 @@ const SinglePackage = () => {
                 {/*============= A section with a list of all tour guides End============*/}
                 </section>
                 {/* Booking form */}
-                <section></section>
+                <section>
+                <div className="container mx-auto">
+        <div className="text-center">
+          <h1 className="text-3xl font-worksans mb-6">
+            Food Item Submission Form
+          </h1>
+          <p className="text-gray-500">
+            Simply fill out the form below to added your food item.
+          </p>
+        </div>
+        <form onSubmit={handleSubmit}>
+          <div className="p-10">
+          <div className="flex gap-x-4 mb-4">
+              <div className="w-1/2">
+                <label className="form-control w-full">
+                  <div className="label">
+                    <span className="label-text">User Name</span>
+                  </div>
+                  <input
+                    // type="text"
+                    name="userName"
+                    value={user?.displayName}
+                    readOnly
+                    placeholder="User Name"
+                    className="input input-bordered w-full"
+                  />
+                </label>
+              </div>
+              {/* item name */}
+              <div className="w-1/2 ml-4">
+                <label className="form-control w-full">
+                  <div className="label">
+                    <span className="label-text">User Email</span>
+                  </div>
+                  <input
+                    type="text"
+                    placeholder="User Email"
+                    name="userEmail"
+                    value={user?.email}
+                    className="input input-bordered w-full"
+                    readOnly
+                  />
+                </label>
+              </div>
+              {/* subcategory_Name */}
+              
+            </div>
+            
+            {/* 2nd row */}
+            <div className="flex gap-x-4 mb-4">
+              {/* item name */}
+              <div className="w-1/2 ml-4">
+                <label className="form-control w-full">
+                  <div className="label">
+                    <span className="label-text">photoUrl</span>
+                  </div>
+                  <input
+                    type="text"
+                    name="photoUrl"
+                    placeholder="photoUrl"
+                    value={user?.photoURL}
+                    className="input input-bordered w-full"
+                  />
+                </label>
+              </div>
+              {/* Price */}
+              <div className="w-1/2">
+                <label className="form-control w-full">
+                  <div className="label">
+                    <span className="label-text">Price</span>
+                  </div>
+                  <input
+                    type="number"
+                    name="price"
+                    placeholder="Price"
+                    className="input input-bordered w-full"
+                  />
+                </label>
+              </div>
+            </div>
+            {/* 3rd row */}
+            <div className="flex gap-x-4 mb-4">
+              {/* Processing time */}
+              <div className="w-1/2 ml-4">
+              <DatePicker
+                showIcon
+                selected={startDate}
+                name="ddate"
+                onChange={(date) => setStartDate(date)}
+              />
+              </div>
+              {/* Price */}
+              <div className="w-1/2">
+                <div className="w-1/2">
+                <select name="guideName" className="select select-success w-full max-w-xs">
+                    <option disabled selected>Select the guide name</option>
+                {
+                  guides.map((guide,index)=>(
+                    <option key={index}>{guide.name}</option>
+                  ))
+                }
+              </select>
+                </div>
+              </div>
+            </div>
+
+            <input type="submit" className="btn btn-block" value="Book Now" />
+          </div>
+        </form>
+      </div>
+                </section>
             </div>
         </>
     );
