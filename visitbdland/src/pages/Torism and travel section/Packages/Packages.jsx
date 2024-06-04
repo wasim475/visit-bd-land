@@ -22,7 +22,7 @@ const Packages = () => {
                     />
                 </div>
 
-                <div className='grid grid-cols-1 md:grid-cols-3 overflow-x-auto rtl'>
+                <div className='grid grid-cols-1 gap-y-2 md:grid-cols-3 overflow-x-auto rtl'>
                 {
                     packData.map((pack,index)=>(
 

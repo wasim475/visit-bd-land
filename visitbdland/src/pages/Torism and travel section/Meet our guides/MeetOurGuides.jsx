@@ -31,8 +31,8 @@ const MeetOurGuides = () => {
     const {name,specialty,experience,bio,image,languages,skills,education,favoriteTour,email,phone,socialMedia,certifications,address,availability}= guides
     return (
         <>
-            <div className="px-60">
-                <section className="flex gap-x-9">
+            <div className="lg:px-60 md:px-40">
+                <section className="md:flex gap-x-9">
                     <div className=" w-32 h-32 relative  border-4 border-white rounded-full overflow-hidden">
                         <img className="object-cover object-center " src={image}/>
                     </div>
@@ -50,7 +50,7 @@ const MeetOurGuides = () => {
                     </div>
                 </section>
 
-                <section className="flex justify-around ">
+                <section className="lg:flex md:flex md:justify-around ">
                         <div>
                             <h1 className="font-bold text-2xl">Education</h1>
                             <ul className="mt-3">
