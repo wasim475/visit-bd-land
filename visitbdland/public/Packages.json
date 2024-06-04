@@ -7,6 +7,64 @@
     "price": "$500",
     "wishlist": false,
     "button": "View Package",
+    "Contents":[
+      {
+        "heading": "Day-01",
+        "title": "Arrival and Exploration",
+        "plans":[
+          {
+            "heading": "Morning",
+            "title": " Departure from Khulna and board the boat for a scenic ride towards the Sundarbans."
+          },
+          {
+            "heading": "Arrive at the forest and check into the eco-friendly lodge. Lunch will be served on board."
+          },
+          {
+            "heading": "Evening",
+            "title": "Guided nature walk and bird watching session. Dinner at the lodge."
+          }
+        ]
+
+      },
+      {
+        "heading": "Day-02",
+        "title": "Wildlife and Culture",
+        "plans":[
+          {
+            "heading": "Morning",
+            "title": "Early morning boat safari through the creeks and canals. Breakfast on board."
+          },
+          {
+            "heading": "Afternoon",
+            "title": "Visit a local village to experience the culture and lifestyle of the forest dwellers. Lunch at the lodge."
+          },
+          {
+            "heading": "Evening",
+            "title": "Enjoy a night safari for a chance to see nocturnal wildlife. Dinner at the lodge."
+          }
+        ]
+
+      },
+      {
+        "heading": "Day-03",
+        "title": "Final Exploration and Departure",
+        "plans":[
+          {
+            "heading": "Morning",
+            "title": " Final boat safari with a focus on wildlife spotting. Breakfast on board."
+          },
+          {
+            "heading": "Afternoon",
+            "title": " Return journey to Khulna with lunch on board."
+          },
+          {
+            "heading": "Evening",
+            "title": "Arrive in Khulna and transfer to your next destination."
+          }
+        ]
+
+      }
+    ],
     "TourDetails":
       {
         "title": "Explore Sundarbans",
@@ -62,6 +120,79 @@
     "price": "$300",
     "wishlist": false,
     "button": "View Package",
+    "Contents":[
+      {
+        "heading": "Day-01",
+        "title": "Arrival and Beach Time",
+        "plans":[
+          {
+            "heading": "Morning",
+            "title": "Arrive in Cox's Bazar and check into your beachfront hotel. Enjoy a welcome drink and relax."
+          },
+          {
+            "heading": "Afternoon",
+            "title": "Take a leisurely walk along the beach and explore the local shops and cafes. Lunch at a beachfront restaurant."
+          },
+          {
+            "heading": "Evening",
+            "title": " Enjoy a stunning sunset view from the beach. Dinner at the hotel."
+          }
+        ]
+
+      },
+      {
+        "heading": "Day-02",
+        "title": "Nature and Adventure",
+        "plans":[
+          {
+            "heading": "Morning",
+            "title": " Visit Himchari National Park for a nature walk and explore the waterfalls. Breakfast at the hotel."
+          },
+          {
+            "heading": "Afternoon",
+            "title": " Drive to Inani Beach for swimming and relaxation. Picnic lunch at the beach."
+          },
+          {
+            "heading": "Evening",
+            "title": "Return to the hotel and enjoy a seafood dinner at a local restaurant."
+          }
+        ]
+
+      },
+      {
+        "heading": "Day-03",
+        "title": "Local Culture and Farewell",
+        "plans":[
+          {
+            "heading": "Morning",
+            "title": "Take a boat ride to nearby islands for snorkeling and marine exploration. Breakfast at the hotel."
+          },
+          {
+            "heading": "Afternoon",
+            "title": "Visit a local fishing village and interact with the fishermen. Lunch at the village."
+          },
+          {
+            "heading": "Evening",
+            "title": " Return to the hotel for a farewell dinner and enjoy traditional music and dance."
+          }
+        ]
+
+      }
+    ],
+    "TourDetails":
+      {
+        "title": "Relax at Cox's Bazar",
+        "subTitle": "Experience the ultimate beach getaway at Cox's Bazar, the world's longest natural sandy sea beach. This tour offers a perfect blend of relaxation and adventure, with pristine beaches, crystal-clear waters, and a vibrant local culture. Whether you're looking to unwind by the sea or explore the local attractions, Cox's Bazar has something for everyone.",
+        "hl1": "Beach Relaxation",
+        "hl1D": "Spend your days lounging on the soft sands, soaking up the sun, and swimming in the warm waters of the Bay of Bengal.",
+        "hl2":"Marine Drive",
+        "hl2D":" Take a scenic drive along the coastline, offering breathtaking views of the sea and surrounding hills.",
+        "hl3":"Himchari National Park",
+        "hl3D":" Visit this beautiful park known for its lush greenery, cascading waterfalls, and panoramic views of the beach.",
+        "hl4":"Local Cuisine",
+        "hl4D":"Savor fresh seafood and local delicacies at beachfront restaurants and cafes."
+      }
+    ,
     "gallery": [
       {
         "id": 1,
@@ -103,6 +234,79 @@
     "price": "$150",
     "wishlist": false,
     "button": "View Package",
+    "Contents":[
+      {
+        "heading": "Day-01",
+        "title": "Historic Dhaka",
+        "plans":[
+          {
+            "heading": "Morning",
+            "title": "Start your day with a visit to Lalbagh Fort and Ahsan Manzil. Breakfast at a local café."
+          },
+          {
+            "heading": "Afternoon",
+            "title": "Explore Old Dhaka, including the Sadarghat river port and street markets. Lunch at a traditional restaurant."
+          },
+          {
+            "heading": "Evening",
+            "title": "Visit the Star Mosque and Dhakeshwari Temple. Dinner at a renowned local eatery."
+          }
+        ]
+
+      },
+      {
+        "heading": "Day-02",
+        "title": "Modern Dhaka",
+        "plans":[
+          {
+            "heading": "Morning",
+            "title": "Tour the Liberation War Museum to learn about Bangladesh's independence. Breakfast at the hotel."
+          },
+          {
+            "heading": "Afternoon",
+            "title": "Visit the National Parliament House and enjoy nearby parks. Lunch at a contemporary restaurant."
+          },
+          {
+            "heading": "Evening",
+            "title": "Explore modern Dhaka with visits to shopping districts and cultural centers. Dinner at a rooftop restaurant with city views."
+          }
+        ]
+
+      },
+      {
+        "heading": "Day-03",
+        "title": "Cultural Dhaka",
+        "plans":[
+          {
+            "heading": "Morning",
+            "title": "Visit the Armenian Church and other historical sites. Breakfast at the hotel."
+          },
+          {
+            "heading": "Afternoon",
+            "title": "Take a boat ride on the Buriganga River for a different perspective of the city. Lunch on the boat."
+          },
+          {
+            "heading": "Evening",
+            "title": "Conclude your tour with a cultural show featuring traditional music and dance. Farewell dinner at a local restaurant."
+          }
+        ]
+
+      }
+    ],
+    "TourDetails":
+      {
+        "title": "Dhaka City Tour",
+        "subTitle": "Discover the vibrant heart of Bangladesh with our Dhaka City Tour. This tour offers a deep dive into the rich history, culture, and modern life of Dhaka, the bustling capital of Bangladesh. From historic landmarks to contemporary attractions, experience the essence of Dhaka in this comprehensive city tour.",
+        "hl1": "Historic Landmarks",
+        "hl1D": " Visit iconic sites such as Lalbagh Fort, Ahsan Manzil (Pink Palace), and the Liberation War Museum to learn about the city's storied past.",
+        "hl2":"Cultural Experiences",
+        "hl2D":"Explore the vibrant streets of Old Dhaka, visit the bustling Sadarghat river port, and enjoy the colorful markets and traditional craftsmanship.",
+        "hl3":"Religious Sites",
+        "hl3D":" Discover the architectural beauty of the Star Mosque, Dhakeshwari Temple, and Armenian Church.",
+        "hl4":"Contemporary Attractions",
+        "hl4D":"Visit modern attractions like the National Parliament House, designed by the renowned architect Louis Kahn, and explore the city's parks and recreational areas."
+      }
+    ,
     "gallery": [
       {
         "id": 1,

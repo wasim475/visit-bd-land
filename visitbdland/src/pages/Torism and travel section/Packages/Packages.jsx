@@ -11,7 +11,7 @@ const Packages = () => {
             .then(resData=>setPackData(resData))
             
     },[])
-    console.log(packData);
+    // console.log(packData);
     return (
         <>
             <section>

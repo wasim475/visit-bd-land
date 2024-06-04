@@ -16,24 +16,35 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ViewTourInfo from "./ViewTourInfo";
+import ViewGuide from "./ViewGuide";
 
 // mui================
 
 
 const SinglePackage = () => {
-  const [expanded, setExpanded] = React.useState(false);
+  let [guides, setGuides]= React.useState([])
 
+  React.useEffect(()=>{
+    fetch('/tourGuides.json')
+    .then(res=>res.json())
+    .then(resData=>setGuides(resData))
+  },[])
+  // =========Mui=================
+  const [expanded, setExpanded] = React.useState(false);
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
-    
+    // =========Mui=================
+
     let packData = useLoaderData()
+    // let guidesData = useLoaderData()
     let {id}= useParams()
     let packs = packData.find((pack)=>pack.id === parseInt(id))
     // console.log(packs);
-    let {image,tourType,title,price,gallery, TourDetails}= packs;
+    let {image,tourType,title,price,gallery, TourDetails,Contents}= packs;
 
-console.log(gallery);
+// console.log(guides);
   
     return (
         <>
@@ -159,14 +170,43 @@ console.log(gallery);
                  {/* ==========================================================
                      Tour Plan Section  Start
                     ==========================================================*/}
+                    <div className="mt-10">
+                      <HeadingTitle
+                      heading={"Explore Our Tour Plans"}
+                      title={"Tailored Adventures Await: Explore Our Diverse Tour Plans. Discover Unique Experiences and Create Unforgettable Memories with Our Curated Travel Packages."}
+                      ></HeadingTitle>
+                    </div>
 
+                    <div>
+                        {
+                          Contents.map((content,index)=>(
+                            <ViewTourInfo key={index} content={content}></ViewTourInfo>
+                          ))
+                        }
+                    </div>
 
                   {/* ==========================================================
                      Tour Plan Section  End
                     ==========================================================*/}
                 </section>
-                {/* A section with a list of all tour guides */}
-                <section></section>
+                <section>
+                {/*============= A section with a list of all tour guides Start==========*/}
+                    <div className="mt-10 mb-10">
+                      <HeadingTitle
+                        heading={"Meet Our Tour Guides"}
+                        title={"Meet Our Expert Tour Guides. Passionate Professionals Dedicated to Enhancing Your Travel Experience.Our team of experienced and knowledgeable tour guides is here to ensure you have an unforgettable journey. Each guide brings a unique set of skills and insights, making your exploration of Bangladesh's wonders both informative and enjoyable. Learn more about our exceptional guides below."}
+                      />
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                        {
+                          guides.map((guide,index)=>(
+                            <ViewGuide key={index} guide={guide}></ViewGuide>
+                          ))
+                        }
+                    </div>
+                {/*============= A section with a list of all tour guides End============*/}
+                </section>
                 {/* Booking form */}
                 <section></section>
             </div>

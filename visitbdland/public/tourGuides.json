@@ -1,0 +1,187 @@
+[
+      {
+        "id": 1,
+        "name": "Mohammad Rahman",
+        "specialty": "Cultural and Historical Tours",
+        "experience": "10 years",
+        "bio": "Mohammad is a history enthusiast with a deep knowledge of Bangladesh's rich cultural heritage. His engaging storytelling and passion for history make every tour an enlightening experience.",
+        "image": "https://i.ibb.co/PMH3Vtg/mubariz-mehdizadeh-Py8-F6-h-Rn5o-unsplash.jpg",
+        "languages": ["Bengali", "English"],
+        "favoriteTour": "Old Dhaka Heritage Walk",
+        "email": "mohammad.rahman@example.com",
+        "phone": "+880123456789",
+        "socialMedia": {
+          "facebook": "facebook.com/mohammad.rahman",
+          "twitter": "twitter.com/mohammad.rahman"
+        },
+        "certifications": ["Certified Tour Guide", "History Specialist"],
+        "address": "123 Dhaka Street, Dhaka, Bangladesh",
+        "availability": "Monday to Friday, 9am - 5pm",
+        "skills": ["Storytelling", "Historical Knowledge", "Customer Service"],
+        "education": [
+            {
+                "degree": "Bachelor's in History",
+                "University":"Dhaka University"
+            }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Ayesha Khatun",
+        "specialty": "Nature and Wildlife Tours",
+        "experience": "8 years",
+        "bio": "Ayesha has a background in environmental science and a profound love for nature. She has been guiding tours in the Sundarbans for years, providing fascinating insights into the region's diverse ecosystem.",
+        "image": "https://i.ibb.co/3d0JKzD/marco-chilese-n-HIb0s-BZMA-unsplash.jpg",
+        "languages": ["Bengali", "English"],
+        "favoriteTour": "Sundarbans Wildlife Safari",
+        "email": "ayesha.khatun@example.com",
+        "phone": "+880123456788",
+        "socialMedia": {
+          "facebook": "facebook.com/ayesha.khatun",
+          "twitter": "twitter.com/ayesha.khatun"
+        },
+        "certifications": ["Certified Wildlife Guide", "Environmental Science Degree"],
+        "address": "456 Khulna Road, Khulna, Bangladesh",
+        "availability": "Tuesday to Saturday, 8am - 4pm",
+        "skills": ["Wildlife Tracking", "Environmental Education", "Photography"],
+        "education": [
+            {
+                "degree": "Bachelor's in Environmental Science",
+                "University":"Khulna University"
+            }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Imran Hossain",
+        "specialty": "Adventure and Outdoor Activities",
+        "experience": "7 years",
+        "bio": "Imran is an avid adventurer with a knack for creating thrilling outdoor experiences. From hiking in national parks to exploring hidden gems, Imran's tours are perfect for adventure seekers.",
+        "image": "https://i.ibb.co/6X1T2J4/joseph-gonzalez-i-Fg-Rcq-Hznqg-unsplash.jpg",
+        "languages": ["Bengali", "English"],
+        "favoriteTour": "Chittagong Hill Tracts Adventure",
+        "email": "imran.hossain@example.com",
+        "phone": "+880123456787",
+        "socialMedia": {
+          "facebook": "facebook.com/imran.hossain",
+          "twitter": "twitter.com/imran.hossain"
+        },
+        "certifications": ["Certified Adventure Guide", "Outdoor Leadership Training"],
+        "address": "789 Chittagong Hill Tract, Chittagong, Bangladesh",
+        "availability": "Monday to Friday, 10am - 6pm",
+        "skills": ["Hiking", "Survival Skills", "First Aid"],
+        "education": [
+            {
+                "degree": "Diploma in Adventure Tourism",
+                "University":"Chittagong College"
+            }
+        ]
+        
+      },
+      {
+        "id": 4,
+        "name": "Fatima Begum",
+        "specialty": "Food and Culinary Tours",
+        "experience": "6 years",
+        "bio": "Fatima is a culinary expert who loves sharing the flavors of Bangladesh. Her food tours offer a delicious journey through local markets, street food stalls, and traditional restaurants.",
+        "image": "https://i.ibb.co/QH1GsfR/muhammad-abdullah-zae-Bg-N8-OTsg-unsplash.jpg",
+        "languages": ["Bengali", "English"],
+        "favoriteTour": "Dhaka Street Food Tour",
+        "email": "fatima.begum@example.com",
+        "phone": "+880123456786",
+        "socialMedia": {
+          "facebook": "facebook.com/fatima.begum",
+          "twitter": "twitter.com/fatima.begum"
+        },
+        "certifications": ["Certified Culinary Guide", "Gastronomy Diploma"],
+        "address": "321 Dhaka Market, Dhaka, Bangladesh",
+        "availability": "Wednesday to Sunday, 9am - 5pm",
+        "skills": ["Culinary Knowledge", "Cooking Demonstrations", "Food Safety"],
+        "education": [
+            {
+                "degree": "Diploma in Culinary Arts",
+                "University":"Dhaka Culinary School"
+            }
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Rafiq Ahmed",
+        "specialty": "Urban and Contemporary Tours",
+        "experience": "9 years",
+        "bio": "Rafiq's expertise lies in urban exploration and modern attractions. His tours of Dhaka highlight the dynamic blend of tradition and modernity, showcasing the city's vibrant culture and contemporary lifestyle.",
+        "image": "https://i.ibb.co/GMJmW12/meysam-jarahkar-LI7j-B1925j0-unsplash.jpg",
+        "languages": ["Bengali", "English"],
+        "favoriteTour": "Dhaka City Highlights",
+        "email": "rafiq.ahmed@example.com",
+        "phone": "+880123456785",
+        "socialMedia": {
+          "facebook": "facebook.com/rafiq.ahmed",
+          "twitter": "twitter.com/rafiq.ahmed"
+        },
+        "certifications": ["Certified Urban Guide", "Tourism Management Degree"],
+        "address": "654 Dhaka Avenue, Dhaka, Bangladesh",
+        "availability": "Monday to Saturday, 8am - 4pm",
+        "skills": ["Urban Exploration", "Public Speaking", "Customer Relations"],
+        "education": [
+            {
+                "degree": "Bachelor's in Tourism Management",
+                "University":"Dhaka University"
+            }
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Nazmul Islam",
+        "specialty": "Eco-Tours and Sustainable Travel",
+        "experience": "5 years",
+        "bio": "Nazmul is passionate about sustainable tourism and eco-friendly travel. He specializes in eco-tours that highlight the natural beauty of Bangladesh while promoting conservation efforts.",
+        "image": "https://i.ibb.co/D1wyR6M/jonas-kakaroto-KIPqvv-TOC1s-unsplash.jpg",
+        "languages": ["Bengali", "English"],
+        "favoriteTour": "Sundarbans Eco-Tour",
+        "email": "nazmul.islam@example.com",
+        "phone": "+880123456784",
+        "socialMedia": {
+          "facebook": "facebook.com/nazmul.islam",
+          "twitter": "twitter.com/nazmul.islam"
+        },
+        "certifications": ["Certified Eco-Tour Guide", "Sustainable Tourism Certification"],
+        "address": "987 Green Street, Barisal, Bangladesh",
+        "availability": "Tuesday to Sunday, 9am - 5pm",
+        "skills": ["Conservation Awareness", "Eco-Friendly Practices", "Community Engagement"],
+      "education": [
+        {
+            "degree": "Bachelor's in Environmental Science",
+            "University":"Barisal University"
+        }
+    ]
+      },
+      {
+        "id": 7,
+        "name": "Tahmina Haque",
+        "specialty": "Cultural Festivals and Events",
+        "experience": "6 years",
+        "bio": "Tahmina has a deep love for cultural festivals and events in Bangladesh. She brings the vibrant traditions and celebrations of the country to life through her engaging tours.",
+        "image": "https://i.ibb.co/YpMynZW/marie-michele-bouchard-3-U9-BCWHMh-Uw-unsplash.jpg",
+        "languages": ["Bengali", "English"],
+        "favoriteTour": "Pohela Boishakh Festival Tour",
+        "email": "tahmina.haque@example.com",
+        "phone": "+880123456783",
+        "socialMedia": {
+          "facebook": "facebook.com/tahmina.haque",
+          "twitter": "twitter.com/tahmina.haque"
+        },
+        "certifications": ["Certified Cultural Guide", "Event Management Certification"],
+        "address": "123 Festival Lane, Sylhet, Bangladesh",
+        "availability": "Monday to Friday, 9am - 6pm",
+        "skills": ["Event Planning", "Cultural Knowledge", "Public Speaking"],
+        "education": [
+            {
+                "degree": "Bachelor's in Event Management",
+                "University":"Sylhet University"
+            }
+        ]
+      }
+    ]
+  
+  
