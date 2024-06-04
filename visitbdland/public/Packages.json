@@ -7,9 +7,20 @@
     "price": "$500",
     "wishlist": false,
     "button": "View Package",
-    "TourDetails": [
-      
-    ],
+    "TourDetails":
+      {
+        "title": "Explore Sundarbans",
+        "subTitle": "Embark on a thrilling adventure to the Sundarbans, the largest mangrove forest in the world and a UNESCO World Heritage site. This tour offers a unique opportunity to explore the dense forests, winding rivers, and diverse wildlife that make the Sundarbans a natural wonder.",
+        "hl1": "Wildlife Safari",
+        "hl1D": "Experience the excitement of spotting the majestic Royal Bengal Tiger, spotted deer, saltwater crocodiles, and a variety of bird species in their natural habitat.",
+        "hl2":"Boat Excursion",
+        "hl2D":"Navigate through the intricate network of rivers and creeks on a guided boat tour, providing an up-close view of the lush mangroves and the diverse ecosystem.",
+        "hl3":"Nature Walks",
+        "hl3D":"Take guided walks through the forest trails to learn about the unique flora and fauna of the Sundarbans.",
+        "hl4":"Night Safari",
+        "hl4D":"Enjoy the thrill of a night safari to witness the nocturnal activities of the forest's inhabitants."
+      }
+    ,
     "gallery": [
       {
         "id": 1,
