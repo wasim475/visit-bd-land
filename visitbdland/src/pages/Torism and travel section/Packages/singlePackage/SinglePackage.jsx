@@ -155,8 +155,16 @@ console.log(gallery);
                     About The Tour Section  End
                     ==========================================================*/}
                 </section>
-                {/* Tour plan */}
-                <section></section>
+                <section>
+                 {/* ==========================================================
+                     Tour Plan Section  Start
+                    ==========================================================*/}
+
+
+                  {/* ==========================================================
+                     Tour Plan Section  End
+                    ==========================================================*/}
+                </section>
                 {/* A section with a list of all tour guides */}
                 <section></section>
                 {/* Booking form */}
