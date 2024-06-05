@@ -11,6 +11,7 @@ import Register from "../../Components/NavItems/Register/Register";
 import Dashboard from "../../Components/NavItems/Dashboard/Dashboard";
 import SinglePackage from "../../pages/Torism and travel section/Packages/singlePackage/SinglePackage";
 import MeetOurGuides from "../../pages/Torism and travel section/Meet our guides/MeetOurGuides";
+import MyProfile from "../../Components/NavItems/Dashboard/My profile/MyProfile";
 // import Packages from "../../pages/Torism and travel section/Packages/Packages";
 // import SinglePackage from "../../pages/Torism and travel section/Packages/SinglePackage";
 
@@ -63,6 +64,12 @@ const router = createBrowserRouter([
           path: '/guides/:id',
           element: <MeetOurGuides></MeetOurGuides>,
           loader: ()=> fetch('/tourGuides.json'),
+          // loader: ()=>fetch("/tourGuides.json")
+        },
+        {
+          path: '/my-profile',
+          element: <MyProfile></MyProfile>,
+          
           // loader: ()=>fetch("/tourGuides.json")
         },
       ]
