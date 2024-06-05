@@ -95,7 +95,7 @@ const handleSubmit = (e) => {
         // form.shortDescription.value = "";
         form.price.value = "";
         // form.countryName.value = "";
-        form.date.value = "";
+        form.date.value = new Date();
       //   form.userEmail.value = "";
       //   form.userName.value = "";
         form.photoUrl.value = "";
@@ -265,16 +265,14 @@ const handleSubmit = (e) => {
                 {/*============= A section with a list of all tour guides End============*/}
                 </section>
                 {/* Booking form */}
-                <section>
+                <section className="mt-20">
                 <div className="container mx-auto">
-        <div className="text-center">
-          <h1 className="text-3xl font-worksans mb-6">
-            Food Item Submission Form
-          </h1>
-          <p className="text-gray-500">
-            Simply fill out the form below to added your food item.
-          </p>
-        </div>
+                  <div className="text-center">
+                   <HeadingTitle
+                   heading={"Booking submission Form"}
+                   title={"Simply fillup the form and confirm your booking now."}
+                   ></HeadingTitle>
+                  </div>
         <form onSubmit={handleSubmit}>
           <div className="p-10">
           <div className="flex gap-x-4 mb-4">
@@ -371,7 +369,7 @@ const handleSubmit = (e) => {
               </div>
             </div>
 
-            <input type="submit" className="btn btn-block" value="Book Now" />
+            <input type="submit" className="btn btn-block bg-green-500" value="Book Now" />
           </div>
         </form>
       </div>
