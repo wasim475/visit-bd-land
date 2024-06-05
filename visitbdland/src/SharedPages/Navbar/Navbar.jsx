@@ -72,7 +72,7 @@ const Navbar = () => {
           </div>
           <div className="navbar-end">
             {user ? (
-              <div className="dropdown dropdown-end">
+              <div className="dropdown dropdown-end z-20">
                 <div tabIndex={0} role="button" className="">
                   <div className="avatar">
                     <div className="lg:w-16 md:w-16 w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">

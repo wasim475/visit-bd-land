@@ -12,6 +12,7 @@ import Dashboard from "../../Components/NavItems/Dashboard/Dashboard";
 import SinglePackage from "../../pages/Torism and travel section/Packages/singlePackage/SinglePackage";
 import MeetOurGuides from "../../pages/Torism and travel section/Meet our guides/MeetOurGuides";
 import MyProfile from "../../Components/NavItems/Dashboard/My profile/MyProfile";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 // import Packages from "../../pages/Torism and travel section/Packages/Packages";
 // import SinglePackage from "../../pages/Torism and travel section/Packages/SinglePackage";
 
@@ -52,7 +53,9 @@ const router = createBrowserRouter([
         },
         {
           path: '/dashboard',
-          element: <Dashboard></Dashboard>
+          element: <PrivateRoute>
+            <Dashboard></Dashboard>
+          </PrivateRoute>
         },
         {
           path: '/packages/:id',

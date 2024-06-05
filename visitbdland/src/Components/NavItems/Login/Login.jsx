@@ -46,6 +46,10 @@ const Login = () => {
     setTimeout(() => {
       Navigate("/");
     }, 7000);
+    // if(user){
+    //   <Navigate to='/' state={location.pathname} replace='true' />
+
+    // }
   };
   const handleFacebook = () => {
     facebookLOgin();
