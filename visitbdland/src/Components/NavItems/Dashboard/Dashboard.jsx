@@ -15,7 +15,7 @@ const Dashboard = () => {
         <NavLink to="/my-bookings">My Bookings</NavLink>
       </li>
       <li className="mb-4">
-        <NavLink to="/my-wishlist">My Wishlist</NavLink>
+        <NavLink to="/wishlist">My Wishlist</NavLink>
       </li>
       <li className="mb-4">
         <NavLink to="/request-to-admin">Request to Admin</NavLink>

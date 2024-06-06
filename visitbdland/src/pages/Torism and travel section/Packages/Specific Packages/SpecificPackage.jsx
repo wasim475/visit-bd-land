@@ -10,7 +10,7 @@ const SpecificPackage = () => {
     let packs = packData.filter((pack)=>pack.tourType === tourType)
    
     let {image,title,price,gallery, TourDetails,Contents}= packs;
-    console.log(packs);
+    // console.log(packs);
     return (
         <>
            <div>

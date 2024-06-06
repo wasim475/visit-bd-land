@@ -1,40 +1,52 @@
 import { Link } from "react-router-dom";
 import { FaRegHeart } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 
 
 const ViewPackages = ({pack}) => {
     const {image,tourType,title,button, price ,id}= pack;
 
-    const handleHeart =(tourDatas)=>{
-        const image = tourDatas.image
-        const tourType = tourDatas.tourType
-        const title = tourDatas.title
-        const id = tourDatas.id
-
-        const wishlistData = {image, tourType, title,id}
-        fetch("https://visit-bd-land-server.vercel.app/wishlist", {
-            method: "POST",
-            headers: {
-              "content-type": "application/json"
-            },
-            body: JSON.stringify(wishlistData)
-          })
+    const handleHeart = (tourDatas) => {
+        const { image, tourType, title, id, price } = tourDatas;
+    
+        const wishlistData = { image, tourType, price, title, id };
+    
+        fetch("https://visit-bd-land-server.vercel.app/wishlist")
             .then((res) => res.json())
-            .then((data) => {
-            //   console.log(data);
-              if (data.insertedId) {
-                Swal.fire({
-                  title: "Success!",
-                  text: "Pack Added to Your Wishlist",
-                  icon: "success",
-                  confirmButtonText: "Exit"
-                });
-                
-              }
+            .then((currentWishlist) => {
+                const isExist = currentWishlist.find(item => item.id === id);
+    
+                if (!isExist) {
+                    fetch("https://visit-bd-land-server.vercel.app/wishlist", {
+                        method: "POST",
+                        headers: {
+                            "content-type": "application/json"
+                        },
+                        body: JSON.stringify(wishlistData)
+                    })
+                        .then((res) => res.json())
+                        .then((data) => {
+                            if (data.insertedId) {
+                                Swal.fire({
+                                    title: "Success!",
+                                    text: "Pack Added to Your Wishlist",
+                                    icon: "success",
+                                    confirmButtonText: "Exit"
+                                });
+                            }
+                        });
+                } else {
+                    Swal.fire({
+                        title: "Warning!",
+                        text: "This Pack is already in your Wishlist",
+                        icon: "warning",
+                        confirmButtonText: "Exit"
+                    });
+                }
             });
-        
-    }
+    };
+    
     return (
         <>
            <div className="card w-96 bg-base-100 shadow-xl image-full">
