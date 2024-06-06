@@ -11,18 +11,30 @@ const TourType = () => {
             .then(resData=>setToursData(resData))
             
     },[])
+    // const newTourData = [...new Set(ToursData.map(item => item.tourType))];
+    const uniqueTourTypes = new Set();
+
+// Filter out objects with duplicate tourType values
+const filteredArray = ToursData.filter(item => {
+    if (!uniqueTourTypes.has(item.tourType)) {
+        uniqueTourTypes.add(item.tourType);
+        return true;
+    }
+    return false;
+});
+console.log( filteredArray);
     return (
         <>
-           <div className="mt-20 bg-TourTypeBG bg-cover">
+           <div className="mt-10 bg-TourTypeBG bg-cover py-5">
             <section className="mb-10">
                 <HeadingTitle
                     heading={"Discover Our Tour Types"}
                     title={"Choose Your Perfect Adventure"}
                 />
             </section>
-            <section>
+            <section className="grid lg:grid-cols-4 md:grid-cols-2 lg:py-10 px-5">
                 {
-                    ToursData.map((tour, index)=>(
+                    filteredArray.map((tour, index)=>(
                         <ViewTourType key={index} tour={tour}></ViewTourType>
                     ))
                 }

@@ -13,6 +13,9 @@ import SinglePackage from "../../pages/Torism and travel section/Packages/single
 import MeetOurGuides from "../../pages/Torism and travel section/Meet our guides/MeetOurGuides";
 import MyProfile from "../../Components/NavItems/Dashboard/My profile/MyProfile";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import AllPackages from "../../pages/Torism and travel section/Packages/All Packages/AllPackages";
+import SpecificPackage from "../../pages/Torism and travel section/Packages/Specific Packages/SpecificPackage";
+import MeetOurAllGuides from "../../pages/Torism and travel section/Meet our guides/MeetOurAllGuides";
 // import Packages from "../../pages/Torism and travel section/Packages/Packages";
 // import SinglePackage from "../../pages/Torism and travel section/Packages/SinglePackage";
 
@@ -64,14 +67,32 @@ const router = createBrowserRouter([
           // loader: ()=>fetch("/tourGuides.json")
         },
         {
+          path: '/specific-packs/:tourType',
+          element: <SpecificPackage></SpecificPackage>,
+          loader: ()=> fetch('/Packages.json'),
+          // loader: ()=>fetch("/tourGuides.json")
+        },
+        {
           path: '/guides/:id',
           element: <MeetOurGuides></MeetOurGuides>,
           loader: ()=> fetch('/tourGuides.json'),
           // loader: ()=>fetch("/tourGuides.json")
         },
         {
+          path: '/all-packages',
+          element: <AllPackages></AllPackages>,
+          loader: ()=> fetch('/Packages.json'),
+          // loader: ()=>fetch("/tourGuides.json")
+        },
+        {
           path: '/my-profile',
           element: <MyProfile></MyProfile>,
+          
+          // loader: ()=>fetch("/tourGuides.json")
+        },
+        {
+          path: '/all-guides',
+          element: <MeetOurAllGuides></MeetOurAllGuides>,
           
           // loader: ()=>fetch("/tourGuides.json")
         },

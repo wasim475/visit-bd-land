@@ -3,6 +3,7 @@
     "id": 1,
     "image": "https://i.ibb.co/NTTpf6r/ashique-anan-abir-sa-Enr4o-J950-unsplash.jpg",
     "tourType": "Adventure",
+    "logo":"https://i.ibb.co/GTjLhhx/cartoon-style-character-traveling-23-2151129696.jpg",
     "title": "Explore the Sundarbans",
     "price": "$500",
     "wishlist": false,
@@ -116,6 +117,7 @@
     "id": 2,
     "image": "https://i.ibb.co/SKC7SYL/keith-luke-s-PU2kz-PIf28-unsplash.jpg",
     "tourType": "Beach",
+    "logo":"https://i.ibb.co/1nybjYJ/Premium-Vector-Landscape-of-palm-tree-on-beach.jpg",
     "title": "Relax at Cox's Bazar",
     "price": "$300",
     "wishlist": false,
@@ -230,6 +232,7 @@
     "id": 3,
     "image": "https://i.ibb.co/Yp1799G/salman-preeom-m-O1-ud-D5i-Cs-unsplash.jpg",
     "tourType": "Cultural",
+    "logo":"https://i.ibb.co/m4cmqDw/Boas-mentioned-that-anthropologists-cannot-compare-different-cultures-since-each-culture-has-its-own.jpg",
     "title": "Dhaka City Tour",
     "price": "$150",
     "wishlist": false,
@@ -339,5 +342,338 @@
         "subtitle": "Dhaka, Bangladesh"
       }
     ]
+  },
+  {
+    "id": 4,
+    "image": "https://i.ibb.co/NxfLfDy/Chittagong-Hill-Tracts-Bangladesh.jpg",
+    "tourType": "Adventure",
+    "logo":"https://i.ibb.co/GTjLhhx/cartoon-style-character-traveling-23-2151129696.jpg",
+    "title": "Hill Tracts Adventure",
+    "price": "$600",
+    "wishlist": false,
+    "button": "View Package",
+    "Contents": [
+      {
+        "heading": "Day-01",
+        "title": "Arrival and Exploration",
+        "plans": [
+          {
+            "heading": "Morning",
+            "title": "Arrive in Bandarban and check into your hilltop resort. Enjoy a welcome drink."
+          },
+          {
+            "heading": "Afternoon",
+            "title": "Visit the Tribal Villages to learn about the local culture and traditions. Lunch at a local restaurant."
+          },
+          {
+            "heading": "Evening",
+            "title": "Enjoy a peaceful evening at the resort with stunning views of the hills. Dinner at the resort."
+          }
+        ]
+      },
+      {
+        "heading": "Day-02",
+        "title": "Trekking and Adventure",
+        "plans": [
+          {
+            "heading": "Morning",
+            "title": "Start an early morning trek to Nilgiri, the highest accessible point in Bangladesh. Breakfast on the go."
+          },
+          {
+            "heading": "Afternoon",
+            "title": "Continue trekking to Chimbuk Hill and visit the local markets. Picnic lunch during the trek."
+          },
+          {
+            "heading": "Evening",
+            "title": "Return to the resort and relax. Dinner with a view of the sunset."
+          }
+        ]
+      },
+      {
+        "heading": "Day-03",
+        "title": "Waterfalls and Departure",
+        "plans": [
+          {
+            "heading": "Morning",
+            "title": "Visit Nafakhum Waterfall, one of the largest waterfalls in Bangladesh. Breakfast at the resort."
+          },
+          {
+            "heading": "Afternoon",
+            "title": "Enjoy a boat ride on the Sangu River. Lunch on the boat."
+          },
+          {
+            "heading": "Evening",
+            "title": "Return to Bandarban for your departure. Farewell dinner at a local restaurant."
+          }
+        ]
+      }
+    ],
+    "TourDetails": {
+      "title": "Hill Tracts Adventure",
+      "subTitle": "Embark on an exhilarating adventure in the Hill Tracts of Bangladesh. Explore the rugged landscapes, visit tribal villages, and trek through some of the most beautiful scenery the country has to offer.",
+      "hl1": "Trekking",
+      "hl1D": "Experience the thrill of trekking through hills and valleys, reaching breathtaking viewpoints and exploring remote areas.",
+      "hl2": "Tribal Culture",
+      "hl2D": "Learn about the unique cultures and traditions of the local tribes, with opportunities to visit their villages and interact with them.",
+      "hl3": "Waterfalls",
+      "hl3D": "Discover the stunning waterfalls hidden within the hills, perfect for a refreshing dip or a scenic photo opportunity.",
+      "hl4": "Scenic Views",
+      "hl4D": "Enjoy panoramic views of the Hill Tracts, with plenty of opportunities to relax and take in the natural beauty."
+    },
+    "gallery": [
+      {
+        "id": 1,
+        "image": "https://i.ibb.co/w7DPjDW/Boga-Lake.jpg",
+        "title": "Boga Lake View",
+        "subtitle": "Bandarban, Bangladesh"
+      },
+      {
+        "id": 2,
+        "image": "https://i.ibb.co/dLqvhFm/Chandranath-Pahar-At-Sitakundo.jpg",
+        "title": "Chandranath Pahar",
+        "subtitle": "Chattagram, Bangladesh"
+      },
+      {
+        "id": 3,
+        "image": "https://i.ibb.co/WsPVvKF/Hiking-Pergasingan-Hill-in-Sembalun-Lombok.jpg",
+        "title": "Trekking Path",
+        "subtitle": "Bandarban, Bangladesh"
+      },
+      {
+        "id": 4,
+        "image": "https://i.ibb.co/P1Gf1rv/Welcome-to-Kaptai-Lake.jpg",
+        "title": "Kaptai Lake",
+        "subtitle": "chittagong, Bangladesh"
+      },
+      {
+        "id": 5,
+        "image": "https://i.ibb.co/N2NbQwm/The-Pendle-Hill-area-is-haunted-due-to-The-Pendle-Hill-Witch-trials-of-1612-Address-Pendle-Hill-Nels.jpg",
+        "title": "hill Ride",
+        "subtitle": "Sangu, Bangladesh"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "image": "https://i.ibb.co/hZ5VH9s/Rajshahi-University-Paris-Road.jpg",
+    "tourType": "Cultural",
+    "logo":"https://i.ibb.co/m4cmqDw/Boas-mentioned-that-anthropologists-cannot-compare-different-cultures-since-each-culture-has-its-own.jpg",
+    "title": "Historical Rajshahi",
+    "price": "$400",
+    "wishlist": false,
+    "button": "View Package",
+    "Contents": [
+      {
+        "heading": "Day-01",
+        "title": "Arrival and Historical Sites",
+        "plans": [
+          {
+            "heading": "Morning",
+            "title": "Arrive in Rajshahi and check into your hotel. Breakfast at the hotel."
+          },
+          {
+            "heading": "Afternoon",
+            "title": "Visit the Varendra Research Museum and Puthia Temple Complex. Lunch at a local restaurant."
+          },
+          {
+            "heading": "Evening",
+            "title": "Explore the historic city center and enjoy dinner at a traditional restaurant."
+          }
+        ]
+      },
+      {
+        "heading": "Day-02",
+        "title": "Cultural Exploration",
+        "plans": [
+          {
+            "heading": "Morning",
+            "title": "Visit the Bagha Mosque and Natore Rajbari. Breakfast at the hotel."
+          },
+          {
+            "heading": "Afternoon",
+            "title": "Explore the Barind Tract region and its archaeological sites. Picnic lunch during the exploration."
+          },
+          {
+            "heading": "Evening",
+            "title": "Return to the hotel and enjoy a cultural show featuring traditional music and dance. Dinner at the hotel."
+          }
+        ]
+      },
+      {
+        "heading": "Day-03",
+        "title": "River Cruise and Departure",
+        "plans": [
+          {
+            "heading": "Morning",
+            "title": "Enjoy a leisurely boat ride on the Padma River. Breakfast on the boat."
+          },
+          {
+            "heading": "Afternoon",
+            "title": "Visit the local silk factories and see the production process. Lunch at a local restaurant."
+          },
+          {
+            "heading": "Evening",
+            "title": "Return to the hotel for your departure. Farewell dinner at a traditional restaurant."
+          }
+        ]
+      }
+    ],
+    "TourDetails": {
+      "title": "Historical Rajshahi",
+      "subTitle": "Discover the rich history and cultural heritage of Rajshahi, known for its ancient temples, mosques, and archaeological sites. This tour offers an in-depth exploration of the region's historical landmarks and vibrant cultural traditions.",
+      "hl1": "Historical Sites",
+      "hl1D": "Visit significant historical sites such as the Varendra Research Museum, Puthia Temple Complex, and Bagha Mosque.",
+      "hl2": "Cultural Heritage",
+      "hl2D": "Experience the local culture through visits to traditional markets, cultural shows, and interactions with local artisans.",
+      "hl3": "Scenic River Cruise",
+      "hl3D": "Enjoy a relaxing boat ride on the Padma River, taking in the scenic beauty and serene environment.",
+      "hl4": "Local Crafts",
+      "hl4D": "Explore the local silk industry and learn about the traditional silk production process in Rajshahi."
+    },
+    "gallery": [
+      {
+        "id": 1,
+        "image": "https://i.ibb.co/SfhqxK3/Palaces-Temples-in-Puthia-and-Natore-from-Rajshahi.jpg",
+        "title": " Temple",
+        "subtitle": "Rajshahi, Bangladesh"
+      },
+      {
+        "id": 2,
+        "image": "https://i.ibb.co/0JH0NkH/Rajshahi-College-The-Best-College-and-Architectural-Beauty-of-Bangladesh.jpg",
+        "title": "Rajshahi College",
+        "subtitle": "Rajshahi, Bangladesh"
+      },
+      {
+        "id": 3,
+        "image": "https://i.ibb.co/6NR6CFq/RAJSHAHI.jpg",
+        "title": "Natore Rajbari",
+        "subtitle": "Rajshahi, Bangladesh"
+      },
+      {
+        "id": 4,
+        "image": "https://i.ibb.co/yYvb4GR/download.jpg",
+        "title": "Puthia Temple",
+        "subtitle": "Rajshahi, Bangladesh"
+      },
+      {
+        "id": 5,
+        "image": "https://i.ibb.co/x85H0tZ/Rajshahi-University.jpg",
+        "title": "Silk Factory",
+        "subtitle": "Rajshahi, Bangladesh"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "image": "https://i.ibb.co/5RgJxQ3/download-1.jpg",
+    "tourType": "Relaxation",
+    "logo":"https://i.ibb.co/whR38bw/Cartoon-Man-Relaxing-with-Hammock-Stock-Vector-Illustration-of-sunny-cartoon-32003861.jpg",
+    "title": "Tea Gardens of Sylhet",
+    "price": "$500",
+    "wishlist": false,
+    "button": "View Package",
+    "Contents": [
+      {
+        "heading": "Day-01",
+        "title": "Arrival and Tea Gardens",
+        "plans": [
+          {
+            "heading": "Morning",
+            "title": "Arrive in Sylhet and check into your tea estate bungalow. Breakfast at the bungalow."
+          },
+          {
+            "heading": "Afternoon",
+            "title": "Explore the lush tea gardens and learn about the tea-making process. Lunch at the estate."
+          },
+          {
+            "heading": "Evening",
+            "title": "Enjoy a relaxing evening with a tea tasting session. Dinner at the bungalow."
+          }
+        ]
+      },
+      {
+        "heading": "Day-02",
+        "title": "Cultural and Natural Exploration",
+        "plans": [
+          {
+            "heading": "Morning",
+            "title": "Visit the Ratargul Swamp Forest for a boat tour. Breakfast at the bungalow."
+          },
+          {
+            "heading": "Afternoon",
+            "title": "Explore the Jaflong region and see the beautiful stone collections. Picnic lunch during the tour."
+          },
+          {
+            "heading": "Evening",
+            "title": "Return to the estate and enjoy a cultural show featuring local music and dance. Dinner at the bungalow."
+          }
+        ]
+      },
+      {
+        "heading": "Day-03",
+        "title": "Heritage Sites and Departure",
+        "plans": [
+          {
+            "heading": "Morning",
+            "title": "Visit the Hazrat Shah Jalal Mazar Sharif and Hazrat Shah Paran Mazar Sharif. Breakfast at the bungalow."
+          },
+          {
+            "heading": "Afternoon",
+            "title": "Explore the local markets and enjoy a traditional lunch at a local restaurant."
+          },
+          {
+            "heading": "Evening",
+            "title": "Return to the bungalow for your departure. Farewell dinner at the estate."
+          }
+        ]
+      }
+    ],
+    "TourDetails": {
+      "title": "Tea Gardens of Sylhet",
+      "subTitle": "Relax and unwind in the serene tea gardens of Sylhet. This tour offers a perfect blend of relaxation, cultural exploration, and natural beauty, providing a rejuvenating experience in one of Bangladesh's most picturesque regions.",
+      "hl1": "Tea Gardens",
+      "hl1D": "Discover the process of tea production and enjoy the peaceful environment of the tea estates.",
+      "hl2": "Natural Beauty",
+      "hl2D": "Explore the Ratargul Swamp Forest and Jaflong's stunning landscapes, offering a unique natural experience.",
+      "hl3": "Cultural Heritage",
+      "hl3D": "Visit important heritage sites like Hazrat Shah Jalal and Hazrat Shah Paran Mazar Sharif to learn about the region's history and culture.",
+      "hl4": "Local Experiences",
+      "hl4D": "Engage with local traditions and enjoy cultural shows, tea tastings, and visits to traditional markets."
+    },
+    "gallery": [
+      {
+        "id": 1,
+        "image": "https://i.ibb.co/Qcm9Sgp/Why-should-you-visit-Tanguar-Haor.jpg",
+        "title": " Estate",
+        "subtitle": "Sylhet, Bangladesh"
+      },
+      {
+        "id": 2,
+        "image": "https://i.ibb.co/8dbhFcX/Lalakhal-Sylhet.jpg",
+        "title": "Ratargul Swamp Forest",
+        "subtitle": "Sylhet, Bangladesh"
+      },
+      {
+        "id": 3,
+        "image": "https://i.ibb.co/fM94yff/Juflong-Tour-Place.jpg",
+        "title": "Jaflong",
+        "subtitle": "Sylhet, Bangladesh"
+      },
+      {
+        "id": 4,
+        "image": "https://i.ibb.co/7z6trj2/Aparup-Bangladesh-Bichanakandi-Sylhet-District.jpg",
+        "title": "Bichanakandi ",
+        "subtitle": "Sylhet, Bangladesh"
+      },
+      {
+        "id": 5,
+        "image": "https://i.ibb.co/yfG3p9m/Jaflong.jpg",
+        "title": "Lake",
+        "subtitle": "Sylhet, Bangladesh"
+      }
+    ]
   }
+  
+  
+  
 ]

@@ -1,0 +1,61 @@
+.hexagon {
+    position: relative;
+    width: 200px; /* adjust as needed */
+    height: 115px; /* adjust as needed */
+    background-color: transparent;
+    margin: 57.5px 0;
+  }
+  
+  .hexagon:before,
+  .hexagon:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: 100px solid transparent; /* adjust as needed */
+    border-right: 100px solid transparent; /* adjust as needed */
+  }
+  
+  .hexagon:before {
+    bottom: 100%;
+    border-bottom: 57.5px solid #ad6666; /* adjust color as needed */
+  }
+  
+  .hexagon:after {
+    top: 100%;
+    width: 0;
+    border-top: 57.5px solid #a46594; /* adjust color as needed */
+  }
+  
+  .hexagon-in1 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    background-color: #ffffff; /* adjust color as needed */
+  }
+  
+  .hexagon-in2 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    background-color: inherit;
+  }
+  
+  .hexagon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7; /* adjust as needed */
+  }
+  
+  .hexagon-text {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5); /* adjust as needed */
+    padding: 5px;
+  }
+  

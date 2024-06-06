@@ -42,7 +42,7 @@ const MeetOurGuides = () => {
                         <ul className="flex gap-x-1 mt-2">
                         {
                             skills.map((skill, index)=>(
-                                <li className="bg-green-200 px-2 rounded-lg font-medium">{skill}</li>
+                                <li title="Skils" className="bg-green-200 px-2 rounded-lg font-medium">{skill}</li>
                             ))
                         }
                         </ul>

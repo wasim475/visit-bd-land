@@ -369,7 +369,7 @@ const handleSubmit = (e) => {
               </div>
             </div>
 
-            <input type="submit" className="btn btn-block bg-green-500" value="Book Now" />
+            <input type="submit" className="btn btn-block bg-green-500 md:text-xl text-white font-semibold hover:text-green-400 hover:border-2 hover:border-green-400 hover:bg-white" value="Book Now" />
           </div>
         </form>
       </div>

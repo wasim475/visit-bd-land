@@ -27,11 +27,11 @@
       },
       {
         "id": 2,
-        "name": "Ayesha Khatun",
+        "name": "Urmi Shikder",
         "specialty": "Nature and Wildlife Tours",
         "experience": "8 years",
-        "bio": "Ayesha has a background in environmental science and a profound love for nature. She has been guiding tours in the Sundarbans for years, providing fascinating insights into the region's diverse ecosystem.",
-        "image": "https://i.ibb.co/3d0JKzD/marco-chilese-n-HIb0s-BZMA-unsplash.jpg",
+        "bio": "Urmi has a background in environmental science and a profound love for nature. She has been guiding tours in the Sundarbans for years, providing fascinating insights into the region's diverse ecosystem.",
+        "image": "https://i.ibb.co/6Nx5bd2/urmi-64.jpg",
         "languages": ["Bengali", "English"],
         "favoriteTour": "Sundarbans Wildlife Safari",
         "email": "ayesha.khatun@example.com",
@@ -47,7 +47,7 @@
         "education": [
             {
                 "degree": "Bachelor's in Environmental Science",
-                "University":"Khulna University"
+                "University":"Azam Khan Govt. Commerce College"
             }
         ]
       },
