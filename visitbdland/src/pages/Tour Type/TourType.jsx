@@ -22,7 +22,7 @@ const filteredArray = ToursData.filter(item => {
     }
     return false;
 });
-console.log( filteredArray);
+// console.log( filteredArray);
     return (
         <>
            <div className="mt-10 bg-TourTypeBG bg-cover py-5">

@@ -3,7 +3,7 @@ import '../../Hexagon.css';
 
 const ViewTourType = ({tour}) => {
     const {logo,tourType,title,button, price ,id}=tour
-    console.log(tour);
+    // console.log(tour);
     return (
         <>
             

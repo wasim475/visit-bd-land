@@ -16,6 +16,7 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import AllPackages from "../../pages/Torism and travel section/Packages/All Packages/AllPackages";
 import SpecificPackage from "../../pages/Torism and travel section/Packages/Specific Packages/SpecificPackage";
 import MeetOurAllGuides from "../../pages/Torism and travel section/Meet our guides/MeetOurAllGuides";
+import MyWishlist from "../../Components/NavItems/Dashboard/My Wishlist/MyWishlist";
 // import Packages from "../../pages/Torism and travel section/Packages/Packages";
 // import SinglePackage from "../../pages/Torism and travel section/Packages/SinglePackage";
 
@@ -87,6 +88,12 @@ const router = createBrowserRouter([
         {
           path: '/my-profile',
           element: <MyProfile></MyProfile>,
+          
+          // loader: ()=>fetch("/tourGuides.json")
+        },
+        {
+          path: '/wishlist',
+          element: <MyWishlist></MyWishlist>,
           
           // loader: ()=>fetch("/tourGuides.json")
         },
