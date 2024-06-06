@@ -1,4 +1,4 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import ViewPhoto from "./ViewPhoto";
 import HeadingTitle from "../../../../Components/Re-use componets/Heading and title/HeadingTitle"
 import DatePicker from "react-datepicker";
@@ -35,6 +35,8 @@ const SinglePackage = () => {
     .then(res=>res.json())
     .then(resData=>setGuides(resData))
   },[])
+
+  const firstThereeGuide = guides.slice(0,3)
   // =========Mui=================
   const [expanded, setExpanded] = React.useState(false);
   const handleChange = (panel) => (event, isExpanded) => {
@@ -257,10 +259,13 @@ const handleSubmit = (e) => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                         {
-                          guides.map((guide,index)=>(
+                          firstThereeGuide.map((guide,index)=>(
                             <ViewGuide key={index} guide={guide}></ViewGuide>
                           ))
                         }
+                    </div>
+                    <div className="text-center mt-10">
+                      <Link className="text-xl font-semibold bg-green-400 text-white px-8 py-2 rounded-lg border hover:bg-transparent hover:text-green-400 hover:border-green-400 transition delay-75"  to={"/all-guides"}>See All Guides</Link>
                     </div>
                 {/*============= A section with a list of all tour guides End============*/}
                 </section>
