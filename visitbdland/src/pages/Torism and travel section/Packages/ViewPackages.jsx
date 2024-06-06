@@ -5,8 +5,35 @@ import { FaRegHeart } from "react-icons/fa";
 
 const ViewPackages = ({pack}) => {
     const {image,tourType,title,button, price ,id}= pack;
+
     const handleHeart =(tourDatas)=>{
-        console.log(tourDatas);
+        const image = tourDatas.image
+        const tourType = tourDatas.tourType
+        const title = tourDatas.title
+        const id = tourDatas.id
+
+        const wishlistData = {image, tourType, title,id}
+        fetch("https://visit-bd-land-server.vercel.app/wishlist", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json"
+            },
+            body: JSON.stringify(wishlistData)
+          })
+            .then((res) => res.json())
+            .then((data) => {
+            //   console.log(data);
+              if (data.insertedId) {
+                Swal.fire({
+                  title: "Success!",
+                  text: "Pack Added to Your Wishlist",
+                  icon: "success",
+                  confirmButtonText: "Exit"
+                });
+                
+              }
+            });
+        
     }
     return (
         <>
@@ -17,7 +44,7 @@ const ViewPackages = ({pack}) => {
                 <p>{title}</p>
                 <p className="text-3xl text-red-500">{price}<span className="text-xl text-gray-400"> /per Person</span></p>
                 <div className="absolute right-4 top-10">
-                <Link to={'/wishlist'}>
+                <Link>
                     <FaRegHeart onClick={()=>handleHeart(pack)} className="text-xl"/>
 
                 </Link>
