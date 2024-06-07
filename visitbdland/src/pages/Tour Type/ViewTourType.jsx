@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import '../../Hexagon.css';
+import {motion} from "framer-motion"
 
 const ViewTourType = ({tour}) => {
     const {logo,tourType,title,button, price ,id}=tour
@@ -7,7 +8,12 @@ const ViewTourType = ({tour}) => {
     return (
         <>
             
-            <div className="hexagon mx-auto my-8 ">
+            <motion.div className="hexagon mx-auto my-8 "
+                whileHover={{
+                    scale:1.1,
+                    boxShadow: "0px 0px 16px rgb(255,255,255) "
+                }}
+            >
                 <Link to={`/specific-packs/${tourType}`}>
                     <div className="hexagon-in1 ">
                         <div className="hexagon-in2 relative">
@@ -18,7 +24,7 @@ const ViewTourType = ({tour}) => {
                         </div>
                     </div>
                 </Link>
-            </div>
+            </motion.div>
         </>
     );
 };

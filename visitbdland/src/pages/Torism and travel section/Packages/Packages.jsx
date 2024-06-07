@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import HeadingTitle from '../../../Components/Re-use componets/Heading and title/HeadingTitle'
 import ViewPackages from './ViewPackages';
 import { Link } from 'react-router-dom';
+import {motion} from 'framer-motion'
 
 const Packages = () => {
     let [packData, setPackData]= useState([])
@@ -16,7 +17,9 @@ const Packages = () => {
     // console.log(packData);
     return (
         <>
-            <section>
+            <section
+               
+            >
                 <div>
                     <HeadingTitle 
                     heading={"Explore Our Exclusive Travel Packages"} 

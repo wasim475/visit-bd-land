@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import { FaDollarSign } from "react-icons/fa";
+
 
 const ViewBookings = ({book,Bookings,setBookings}) => {
     const {date,
@@ -11,7 +14,7 @@ const ViewBookings = ({book,Bookings,setBookings}) => {
         title,
         _id,
         image}= book;
-        console.log(title);
+        // console.log(title);
 
     const handleCancel = (id)=>{
         Swal.fire({
@@ -31,7 +34,7 @@ const ViewBookings = ({book,Bookings,setBookings}) => {
                 .then((data) => {
                   if (data.deletedCount > 0) {
                     Swal.fire({
-                      title: "Deleted!",
+                      title: "Cancel!",
                       text: "Your booking has been Canceled.",
                       icon: "success"
                   });
@@ -73,7 +76,7 @@ const ViewBookings = ({book,Bookings,setBookings}) => {
                                 <h1 className="flex items-center text-red-500 font-bold">{date}</h1>
                             </td>
                             <td>
-                                <h1 className="flex items-center text-red-500 font-bold">{price}</h1>
+                                <h1 className="flex items-center text-red-500 font-bold"><span><FaDollarSign className='text-lg'/></span> {price}</h1>
                             </td>
                             <td><br/></td>
                             <th>

@@ -6,6 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AuthContex } from "../../Providers/AuthProvider/AuthProvider";
 import logo from "../../assets/Logo/logo.png"
+import {motion} from "framer-motion"
 
 const Navbar = () => {
   let { user, logOut } = useContext(AuthContex);
@@ -63,8 +64,19 @@ const Navbar = () => {
               to="/"
             >
               {" "}
-              <img src={logo} className="w-[50px] h-[50px]"/>
-              Visit BD Land
+              <motion.img src={logo} 
+                className="w-[50px] h-[50px] z-10"
+                  initial={{x:-250}}
+                  animate={{x:0}}
+                  transition={{delay: 2, duration: 2, type: 'spring', stiffness: 20}}
+                />
+                <motion.span className="bg-gradient-to-r from-fuchsia-500 to-cyan-500 bg-clip-text text-transparent"
+                   initial={{y:-250}}
+                  animate={{y:0}}
+                  transition={{delay: 2, duration: 2, type: 'spring', stiffness: 20}}
+                >
+                  Visit BD Land
+                </motion.span>
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">

@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom";
 import { FaRegHeart } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { useState } from "react";
+import { motion } from "framer-motion";
+
 
 
 
 const ViewPackages = ({pack}) => {
     const {image,tourType,title,button, price ,id}= pack;
+
+    const [isWishList, setWishList]= useState(false)
 
     const handleHeart = (tourDatas) => {
         const { image, tourType, title, id, price } = tourDatas;
@@ -34,6 +39,7 @@ const ViewPackages = ({pack}) => {
                                     icon: "success",
                                     confirmButtonText: "Exit"
                                 });
+                                setWishList(true)
                             }
                         });
                 } else {
@@ -49,7 +55,11 @@ const ViewPackages = ({pack}) => {
     
     return (
         <>
-           <div className="card w-96 bg-base-100 shadow-xl image-full">
+           <motion.div 
+                initial={{x:'100vw'}}
+                animate={{x:0}}
+                transition={{delay: .5, type: 'spring'}}
+           className="card w-96 bg-base-100 shadow-xl image-full">
             <figure><img src={image} alt="image" /></figure>
             <div className="card-body relative">
                 <h2 className="card-title text-2xl">{tourType}</h2>
@@ -57,7 +67,7 @@ const ViewPackages = ({pack}) => {
                 <p className="text-3xl text-red-500">{price}<span className="text-xl text-gray-400"> /per Person</span></p>
                 <div className="absolute right-4 top-10">
                 <Link>
-                    <FaRegHeart onClick={()=>handleHeart(pack)} className="text-xl"/>
+                    <FaRegHeart onClick={()=>handleHeart(pack)} className={`text-xl ${isWishList&& "text-red-500"}`}/>
 
                 </Link>
                 </div>
@@ -65,7 +75,7 @@ const ViewPackages = ({pack}) => {
                 <Link to={`/packages/${id}`} className="btn btn-primary">{button}</Link>
                 </div>
             </div>
-            </div> 
+            </motion.div> 
         </>
     );
 };
