@@ -1,12 +1,49 @@
 import { useContext } from "react";
 import { AuthContex } from "../../../../Providers/AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const MyProfile = () => {
     let { user } = useContext(AuthContex);
+    const userName = user?.userName
+    const photo = user?.photoURL
+    const handleStorySubmit = ()=>{
+        e.preventDefault();
+        const form = e.target;
+        const story = form.story.value;
+        const title = form.title.value;
+      
+        const storyData = {
+          story,
+          title,
+          userName,
+          photo
+        };
+      
+        fetch("https://visit-bd-land-server.vercel.app/review", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json"
+          },
+          body: JSON.stringify(storyData)
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.insertedId) {
+              Swal.fire({
+                title: "Success!",
+                text: "Your Story posted successfully",
+                icon: "success",
+                confirmButtonText: "Okay"
+              });
+              
+            }
+          });
+    }
     return (
         <>
-            <div className="h-screen dark:bg-gray-700 bg-gray-200 pt-12">
+            <div className="h-screen dark:bg-gray-700 bg-gray-200 pt-2">
     <div className="max-w-sm mx-auto bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-lg">
         <div className="border-b px-4 pb-6">
             <div className="text-center my-4">
@@ -19,28 +56,41 @@ const MyProfile = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex gap-2 px-2">
-                <button
-                    className="flex-1 rounded-full bg-blue-600 dark:bg-blue-800 text-white dark:text-white antialiased font-bold hover:bg-blue-800 dark:hover:bg-blue-900 px-4 py-2">
-                    Follow
-                </button>
-                <button
-                    className="flex-1 rounded-full border-2 border-gray-400 dark:border-gray-700 font-semibold text-black dark:text-white px-4 py-2">
-                    Message
-                </button>
+            <div className=" px-2">
+            <div className="mb-2">
+            <h2 className="text-2xl font-bold">Add a Story</h2>
+            <p>Share your experience with us.</p> 
             </div>
+      <form onSubmit={handleStorySubmit} className="w-full max-w-lg">
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="storyTitle">
+            Title
+          </label>
+          <input
+            type="text"
+            name="title"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            required
+          />
         </div>
-        <div className="px-4 py-4">
-            <div className="flex gap-2 items-center text-gray-800 dark:text-gray-300 mb-4">
-                <svg className="h-6 w-6 text-gray-600 dark:text-gray-400" fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                    <path className=""
-                        d="M12 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-2a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm9 11a1 1 0 0 1-2 0v-2a3 3 0 0 0-3-3H8a3 3 0 0 0-3 3v2a1 1 0 0 1-2 0v-2a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v2z" />
-                </svg>
-                <span><strong className="text-black dark:text-white">12</strong> Followers you know</span>
-            </div>
-            <div className="flex">
-                
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="storyContent">
+            Write Your Story
+          </label>
+          <textarea
+            id="storyContent"
+            name="story"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            required
+          />
+        </div>
+        <button
+          type="submit"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        >
+          Submit Story
+        </button>
+      </form>
             </div>
         </div>
     </div>
