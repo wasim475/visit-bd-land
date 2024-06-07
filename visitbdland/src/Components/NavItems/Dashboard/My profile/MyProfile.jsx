@@ -5,9 +5,10 @@ import Swal from "sweetalert2";
 
 const MyProfile = () => {
     let { user } = useContext(AuthContex);
-    const userName = user?.userName
+    const userName = user?.displayName
     const photo = user?.photoURL
-    const handleStorySubmit = ()=>{
+
+    const handleStorySubmit = (e)=>{
         e.preventDefault();
         const form = e.target;
         const story = form.story.value;
@@ -20,7 +21,7 @@ const MyProfile = () => {
           photo
         };
       
-        fetch("https://visit-bd-land-server.vercel.app/review", {
+        fetch("https://visit-bd-land-server.vercel.app/stories", {
           method: "POST",
           headers: {
             "content-type": "application/json"
@@ -52,7 +53,7 @@ const MyProfile = () => {
                 <div className="py-2">
                     <h3 className="font-bold text-2xl text-gray-800 dark:text-white mb-1">{user?.displayName}</h3>
                     <div className="inline-flex text-gray-700 dark:text-gray-300 items-center">
-                        <p>{user.email}</p>
+                        <p>{user?.email}</p>
                     </div>
                 </div>
             </div>
@@ -63,7 +64,7 @@ const MyProfile = () => {
             </div>
       <form onSubmit={handleStorySubmit} className="w-full max-w-lg">
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="storyTitle">
+          <label className="block text-gray-700 text-sm font-bold mb-2" >
             Title
           </label>
           <input
@@ -78,18 +79,18 @@ const MyProfile = () => {
             Write Your Story
           </label>
           <textarea
-            id="storyContent"
             name="story"
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             required
           />
         </div>
-        <button
+        <input
           type="submit"
+          value="Submit Story"
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-        >
-          Submit Story
-        </button>
+        />
+          
+        
       </form>
             </div>
         </div>

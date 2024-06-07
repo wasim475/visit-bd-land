@@ -18,6 +18,7 @@ import SpecificPackage from "../../pages/Torism and travel section/Packages/Spec
 import MeetOurAllGuides from "../../pages/Torism and travel section/Meet our guides/MeetOurAllGuides";
 import MyWishlist from "../../Components/NavItems/Dashboard/My Wishlist/MyWishlist";
 import MyBookings from "../../Components/NavItems/Dashboard/My bookings/MyBookings";
+import AllStoryPage from "../../pages/Torist Story Section/AllStoryPage";
 // import Packages from "../../pages/Torism and travel section/Packages/Packages";
 // import SinglePackage from "../../pages/Torism and travel section/Packages/SinglePackage";
 
@@ -101,6 +102,12 @@ const router = createBrowserRouter([
         {
           path: '/my-bookings',
           element: <MyBookings></MyBookings>,
+          
+          // loader: ()=>fetch("https://visit-bd-land-server.vercel.app/wishlist")
+        },
+        {
+          path: '/all-stories',
+          element: <AllStoryPage></AllStoryPage>,
           
           // loader: ()=>fetch("https://visit-bd-land-server.vercel.app/wishlist")
         },
