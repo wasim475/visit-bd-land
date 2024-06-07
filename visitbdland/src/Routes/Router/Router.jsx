@@ -19,6 +19,7 @@ import MeetOurAllGuides from "../../pages/Torism and travel section/Meet our gui
 import MyWishlist from "../../Components/NavItems/Dashboard/My Wishlist/MyWishlist";
 import MyBookings from "../../Components/NavItems/Dashboard/My bookings/MyBookings";
 import AllStoryPage from "../../pages/Torist Story Section/AllStoryPage";
+import ViewSingleStory from "../../pages/Torist Story Section/ViewSingleStory";
 // import Packages from "../../pages/Torism and travel section/Packages/Packages";
 // import SinglePackage from "../../pages/Torism and travel section/Packages/SinglePackage";
 
@@ -82,6 +83,11 @@ const router = createBrowserRouter([
           // loader: ()=>fetch("/tourGuides.json")
         },
         {
+          path: '/stories/:id',
+          element: <ViewSingleStory></ViewSingleStory>,
+          loader: ()=> fetch('https://visit-bd-land-server.vercel.app/stories'),
+        },
+        {
           path: '/all-packages',
           element: <AllPackages></AllPackages>,
           loader: ()=> fetch('/Packages.json'),
@@ -90,14 +96,10 @@ const router = createBrowserRouter([
         {
           path: '/my-profile',
           element: <MyProfile></MyProfile>,
-          
-          // loader: ()=>fetch("/tourGuides.json")
         },
         {
           path: '/wishlist',
           element: <MyWishlist></MyWishlist>,
-          
-          // loader: ()=>fetch("https://visit-bd-land-server.vercel.app/wishlist")
         },
         {
           path: '/my-bookings',
@@ -108,14 +110,10 @@ const router = createBrowserRouter([
         {
           path: '/all-stories',
           element: <AllStoryPage></AllStoryPage>,
-          
-          // loader: ()=>fetch("https://visit-bd-land-server.vercel.app/wishlist")
         },
         {
           path: '/all-guides',
           element: <MeetOurAllGuides></MeetOurAllGuides>,
-          
-          // loader: ()=>fetch("/tourGuides.json")
         },
       ]
     },

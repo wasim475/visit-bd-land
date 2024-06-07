@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 
 
 const ViewStory = ({touristStory}) => {
-    const {story,title,userName,photo} = touristStory
+    const {story,title,userName,photo, _id} = touristStory
 
     return (
         <>
             <div className="card w-96  bg-base-100 shadow-xl">
-                <Link>
+                <Link to={`/stories/${_id}`}>
                     <div className="card-body">
                         <h2 className="card-title">{title}</h2>
                         <p className="h-32 overflow-y-auto">{story}</p>

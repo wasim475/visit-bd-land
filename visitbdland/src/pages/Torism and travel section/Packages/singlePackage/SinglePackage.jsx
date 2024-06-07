@@ -1,4 +1,4 @@
-import { Link, useLoaderData, useParams } from "react-router-dom";
+import { Link, Navigate, useLoaderData, useParams } from "react-router-dom";
 import ViewPhoto from "./ViewPhoto";
 import HeadingTitle from "../../../../Components/Re-use componets/Heading and title/HeadingTitle"
 import DatePicker from "react-datepicker";
@@ -57,6 +57,7 @@ const [startDate, setStartDate] = React.useState(new Date());
 // console.log("users info",user);
 
 const handleSubmit = (e) => {
+  
   e.preventDefault();
   const form = e.target;
   const date = form.ddate.value;
@@ -72,7 +73,9 @@ const handleSubmit = (e) => {
     price,
     userEmail,
     userName,
-    photoUrl
+    photoUrl,
+    title,
+    image
   };
 
   fetch("https://visit-bd-land-server.vercel.app/bookings", {
@@ -85,13 +88,15 @@ const handleSubmit = (e) => {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
-      if (data.insertedId) {
+      if (data.insertedId) { 
         Swal.fire({
           title: "Success!",
           text: "Confirm your Booking”",
           icon: "success",
-          confirmButtonText: "Exit"
-        });
+          confirmButtonText: "Exit",
+          });
+        Navigate("/login")
+        
         form.guideName.value = "";
         // form.FoodCategory.value = "";
         // form.shortDescription.value = "";
@@ -102,7 +107,8 @@ const handleSubmit = (e) => {
       //   form.userName.value = "";
         form.photoUrl.value = "";
       }
-    });
+      });
+    
 };
   
     return (
