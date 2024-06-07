@@ -22,7 +22,7 @@ const ToristStorySection = () => {
                     title={"Discover Inspiring Stories from Fellow Travelers: Real Experiences and Adventures from Journeys Across Bangladesh and Beyond"}
                 />
             </section>
-            <section className="grid grid-cols-3 gap-y-3">
+            <section className="grid md:grid-cols-2 grid-cols-1 lg:grid-cols-3 px-2 md:px-5 gap-y-3">
                 {
                     firstFourStory.map((touristStory, index)=>(
                         <ViewStory key={index} touristStory={touristStory} ></ViewStory>
