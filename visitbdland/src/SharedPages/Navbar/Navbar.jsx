@@ -69,6 +69,11 @@ const Navbar = () => {
                   initial={{x:-250}}
                   animate={{x:0}}
                   transition={{delay: 2, duration: 2, type: 'spring', stiffness: 20}}
+                  whileHover={{
+                    scale:1.3,
+                    originX: 0,
+                    color: "#8fe112"
+                  }}
                 />
                 <motion.span className="bg-gradient-to-r from-fuchsia-500 to-cyan-500 bg-clip-text text-transparent"
                    initial={{y:-250}}
