@@ -8,8 +8,12 @@ import { useForm } from "react-hook-form"
 import { BsFillEyeFill } from "react-icons/bs";
 import { RiEyeCloseFill } from "react-icons/ri";
 import Swal from 'sweetalert2';
+import UseAxiosPublic from '../../../Providers/Hooks/Axios/UseAxiosPublic';
 
 const Register = () => {
+
+    const axiosPublic = UseAxiosPublic()
+
     let [eye, setEye]= useState(false)
 
     const {createUser, updateUserProfile}= useContext(AuthContex)
@@ -43,18 +47,30 @@ const Register = () => {
             updateUserProfile(fullName, photoUrl, email)
             .then(()=>{
                 if(result.user){
-                    Swal.fire({
-                        position: "top-end",
-                        icon: "success",
-                        title: "Create account successfully!",
-                        showConfirmButton: false,
-                        timer: 1500
-                      });
+                    const userInfo ={
+                        name: fullName,
+                        email: email,
+                        image: photoUrl
+                    }
+                    axiosPublic.post('/users',userInfo)
+                    .then(res=>{
+                        if(res.data.insertedId){
+                            Swal.fire({
+                                position: "top-end",
+                                icon: "success",
+                                title: "Create account successfully!",
+                                showConfirmButton: false,
+                                timer: 1500
+                              });
+                              Navigate('/')
+                        }
+                    })
+                   
                     
-                    setTimeout(()=>{
+                    // setTimeout(()=>{
                         
-                        Navigate(location?.state ? location.state : '/')
-                    },900)
+                    //     Navigate(location?.state ? location.state : '/')
+                    // },900)
                 }
             })
           
