@@ -9,7 +9,7 @@ import UseAxiosS from '../../../../../Providers/Hooks/Axios/UseAxiosS';
 
 const ManageUsers = () => {
     const axiosSecure = UseAxiosS()
-    const {data:users=[]} = useQuery({
+    const {data:users=[], refetch} = useQuery({
         queryKey: ["users"],
         queryFn: async () =>{
             const res = await axiosSecure.get("/users");
@@ -37,11 +37,10 @@ const ManageUsers = () => {
             <table className="table">
                     <thead>
                         <tr>
-                            <th className='text-xl'>User Name</th>
-                            <th className='text-xl'>Tour Guide</th>
-                            <th className='text-xl'>Tour Date</th>
-                            <th className='text-xl'>Price</th>
-                            <th className='text-xl'>Status</th>
+                            <th className='text-xl'>User</th>
+                            <th className='text-xl'>Role</th>
+                            <th className='text-xl'>Action</th>
+                           
                         </tr>
                     </thead>
                     <tbody>
