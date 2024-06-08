@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 import app from '../Firebase/Firebase.config';
 import { toast } from 'react-toastify';
 import { useLocation, useNavigate } from 'react-router-dom';
+import UseAxiosPublic from '../Hooks/Axios/UseAxiosPublic';
 
 
 
@@ -27,7 +28,7 @@ const AuthProvider = ({children}) => {
     // const location = useLocation();
     // const Navigate = useNavigate();
 
-   
+   const axiosPublic = UseAxiosPublic()
 
     function verifyPassword(password) {
         const uppercaseRegex = /[A-Z]/;
@@ -75,15 +76,26 @@ const AuthProvider = ({children}) => {
     const googleLOgin= ()=>{
         signInWithPopup(auth, GoogleProvider)
         .then((result)=>{
+            // console.log(result.user);
             if(result.user){
-               
-                Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: "Loging Successfull",
-                    showConfirmButton: false,
-                    timer: 1500
-                  });
+               const userInfo={
+                name: result.user.displayName,
+                email: result.user.email,
+                image:result.user.photoURL
+               }
+               axiosPublic.post('users',userInfo)
+               .then(res=>{
+                
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Loging Successfull",
+                        showConfirmButton: false,
+                        timer: 1500
+                      });
+                
+               })
+                
                 //   Navigate(from,{replace:true});
             }
         })

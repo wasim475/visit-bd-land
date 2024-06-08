@@ -80,7 +80,7 @@ const ViewBookings = ({book,Bookings,setBookings}) => {
                             </td>
                             <td><br/></td>
                             <th>
-                                <Link to={`/packages/${_id}`} className="btn bg-green-400 text-white btn-xs">Pay</Link>
+                                <Link  className="btn bg-green-400 text-white btn-xs">Pay</Link>
                                 <Link onClick={()=>handleCancel(_id)} className="btn bg-red-600 text-white btn-xs">Cancel</Link>
                             </th>
                         </tr>

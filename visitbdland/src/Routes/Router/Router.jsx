@@ -21,6 +21,10 @@ import MyBookings from "../../Components/NavItems/Dashboard/My bookings/MyBookin
 import AllStoryPage from "../../pages/Torist Story Section/AllStoryPage";
 import ViewSingleStory from "../../pages/Torist Story Section/ViewSingleStory";
 import Secret from "../../SharedPages/secret/Secret";
+import AdminRequest from "../../Components/NavItems/Dashboard/Admin request/AdminRequest";
+import AdminProfile from "../../Components/NavItems/Dashboard/Admin dashboard/My profile/AdminProfile";
+import AddPackages from "../../Components/NavItems/Dashboard/Admin dashboard/Add Packages/AddPackages";
+import ManageUsers from "../../Components/NavItems/Dashboard/Admin dashboard/Manage Users/ManageUsers";
 // import Packages from "../../pages/Torism and travel section/Packages/Packages";
 // import SinglePackage from "../../pages/Torism and travel section/Packages/SinglePackage";
 
@@ -59,12 +63,12 @@ const router = createBrowserRouter([
           path: '/register',
           element: <Register></Register>
         },
-        {
-          path: '/dashboard',
-          element: <PrivateRoute>
-            <Dashboard></Dashboard>
-          </PrivateRoute>
-        },
+        // {
+          // path: '/dashboard',
+          // element: <PrivateRoute>
+          //   <Dashboard></Dashboard>
+          // </PrivateRoute>
+        // },
         {
           path: '/packages/:id',
           element: <SinglePackage></SinglePackage>,
@@ -94,20 +98,17 @@ const router = createBrowserRouter([
           loader: ()=> fetch('/Packages.json'),
           // loader: ()=>fetch("/tourGuides.json")
         },
-        {
-          path: '/my-profile',
-          element: <MyProfile></MyProfile>,
-        },
-        {
-          path: '/wishlist',
-          element: <MyWishlist></MyWishlist>,
-        },
-        {
-          path: '/my-bookings',
-          element: <MyBookings></MyBookings>,
+        // {
+        //   path: '/my-profile',
+        //   element: <MyProfile></MyProfile>,
+        // },
+        
+        // {
+        //   path: '/my-bookings',
+        //   element: <MyBookings></MyBookings>,
           
-          // loader: ()=>fetch("https://visit-bd-land-server.vercel.app/wishlist")
-        },
+        //   // loader: ()=>fetch("https://visit-bd-land-server.vercel.app/wishlist")
+        // },
         {
           path: '/all-stories',
           element: <AllStoryPage></AllStoryPage>,
@@ -122,6 +123,48 @@ const router = createBrowserRouter([
         },
       ]
     },
+    {
+          path: 'dashboard',
+          element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+          children: [
+            {
+              path: 'my-bookings',
+              element: <PrivateRoute><MyBookings></MyBookings></PrivateRoute>
+            },
+            {
+              path: 'my-profile',
+              element: <MyProfile></MyProfile>,
+            },
+            {
+              path: 'wishlist',
+              element: <MyWishlist></MyWishlist>,
+            },
+            {
+              path: 'admin-request',
+              element: <AdminRequest></AdminRequest>,
+            },
+            {
+              path: 'admin',
+              element: <AdminProfile></AdminProfile>,
+            },
+            {
+              path: 'add-packages',
+              element: <AddPackages></AddPackages>,
+            },
+            {
+              path: 'manage-users',
+              element: <ManageUsers></ManageUsers>
+            },
+
+        // admin routes
+        // {
+        //   path: 'users',
+        //   element: <AllUsers></AllUsers>
+        // }
+
+      ]
+    }
+    
   ]);
 
   export default router;

@@ -47,9 +47,7 @@ const Login = () => {
   const handleGoogle = () => {
     
     googleLOgin()
-    
-    
-    
+  
     setTimeout(() => {
       Navigate('/');
     }, 7000);
