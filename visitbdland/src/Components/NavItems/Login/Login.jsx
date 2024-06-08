@@ -18,6 +18,8 @@ const Login = () => {
   const location = useLocation();
   const Navigate = useNavigate();
 
+  const from = location.state?.from?.pathname || '/';
+
   let handleLogin = (e) => {
     e.preventDefault();
     let form = new FormData(e.currentTarget);
@@ -32,9 +34,10 @@ const Login = () => {
           showConfirmButton: false,
           timer: 1500
         });
-        setTimeout(() => {
-          Navigate(location?.state ? location.state : "/");
-        }, 900);
+        // setTimeout(() => {
+        //   Navigate(location?.state ? location.state : "/");
+        // }, 900);
+          Navigate(from,{replace:true});
       })
       .catch((error) => {
         toast("invalid email or password");
@@ -42,12 +45,16 @@ const Login = () => {
   };
 
   const handleGoogle = () => {
-    googleLOgin();
+    
+    googleLOgin()
+    
+    
+    
     setTimeout(() => {
-      Navigate("/");
+      Navigate('/');
     }, 7000);
     // if(user){
-    //   <Navigate to='/' state={location.pathname} replace='true' />
+      // <Navigate to='/' state={location.pathname} replace='true' />
 
     // }
   };

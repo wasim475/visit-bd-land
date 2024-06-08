@@ -20,6 +20,7 @@ import MyWishlist from "../../Components/NavItems/Dashboard/My Wishlist/MyWishli
 import MyBookings from "../../Components/NavItems/Dashboard/My bookings/MyBookings";
 import AllStoryPage from "../../pages/Torist Story Section/AllStoryPage";
 import ViewSingleStory from "../../pages/Torist Story Section/ViewSingleStory";
+import Secret from "../../SharedPages/secret/Secret";
 // import Packages from "../../pages/Torism and travel section/Packages/Packages";
 // import SinglePackage from "../../pages/Torism and travel section/Packages/SinglePackage";
 
@@ -114,6 +115,10 @@ const router = createBrowserRouter([
         {
           path: '/all-guides',
           element: <MeetOurAllGuides></MeetOurAllGuides>,
+        },
+        {
+          path: '/secret',
+          element: <PrivateRoute><Secret></Secret></PrivateRoute>,
         },
       ]
     },

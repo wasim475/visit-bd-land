@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Swal from 'sweetalert2';
 import app from '../Firebase/Firebase.config';
 import { toast } from 'react-toastify';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 
@@ -18,9 +19,13 @@ const auth = getAuth(app);
 const GoogleProvider = new GoogleAuthProvider();
 const facebookProvider = new FacebookAuthProvider();
 
+
+
 const AuthProvider = ({children}) => {
     let [user , setUser] = useState(null)
     let [loading, setLoading]= useState(true)
+    // const location = useLocation();
+    // const Navigate = useNavigate();
 
    
 
@@ -61,6 +66,10 @@ const AuthProvider = ({children}) => {
         setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
+
+   
+  
+    const from = location.state?.from?.pathname || '/';
   
 
     const googleLOgin= ()=>{
@@ -75,6 +84,7 @@ const AuthProvider = ({children}) => {
                     showConfirmButton: false,
                     timer: 1500
                   });
+                //   Navigate(from,{replace:true});
             }
         })
     }
