@@ -28,143 +28,152 @@ import ManageUsers from "../../Components/NavItems/Dashboard/Admin dashboard/Man
 // import Packages from "../../pages/Torism and travel section/Packages/Packages";
 // import SinglePackage from "../../pages/Torism and travel section/Packages/SinglePackage";
 
-
 const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Main></Main>,
-      errorElement: <ErrorPage></ErrorPage>,
-      children:[
-        {
-          path: '/',
-          element: <Home></Home>
-        },
-        {
-          path: '/community',
-          element: <Community></Community>
-        },
-        {
-          path: '/blogs',
-          element: <Blogs></Blogs>
-        },
-        {
-          path: '/about-us',
-          element: <AboutUs></AboutUs>
-        },
-        {
-          path: '/contact-us',
-          element: <ContactUs></ContactUs>
-        },
-        {
-          path: '/login',
-          element: <Login></Login>
-        },
-        {
-          path: '/register',
-          element: <Register></Register>
-        },
-        // {
-          // path: '/dashboard',
-          // element: <PrivateRoute>
-          //   <Dashboard></Dashboard>
-          // </PrivateRoute>
-        // },
-        {
-          path: '/packages/:id',
-          element: <SinglePackage></SinglePackage>,
-          loader: ()=> fetch('/Packages.json'),
-          // loader: ()=>fetch("/tourGuides.json")
-        },
-        {
-          path: '/specific-packs/:tourType',
-          element: <SpecificPackage></SpecificPackage>,
-          loader: ()=> fetch('/Packages.json'),
-          // loader: ()=>fetch("/tourGuides.json")
-        },
-        {
-          path: '/guides/:id',
-          element: <MeetOurGuides></MeetOurGuides>,
-          loader: ()=> fetch('/tourGuides.json'),
-          // loader: ()=>fetch("/tourGuides.json")
-        },
-        {
-          path: '/stories/:id',
-          element: <ViewSingleStory></ViewSingleStory>,
-          loader: ()=> fetch('https://visit-bd-land-server.vercel.app/stories'),
-        },
-        {
-          path: '/all-packages',
-          element: <AllPackages></AllPackages>,
-          loader: ()=> fetch('/Packages.json'),
-          // loader: ()=>fetch("/tourGuides.json")
-        },
-        // {
-        //   path: '/my-profile',
-        //   element: <MyProfile></MyProfile>,
-        // },
-        
-        // {
-        //   path: '/my-bookings',
-        //   element: <MyBookings></MyBookings>,
-          
-        //   // loader: ()=>fetch("https://visit-bd-land-server.vercel.app/wishlist")
-        // },
-        {
-          path: '/all-stories',
-          element: <AllStoryPage></AllStoryPage>,
-        },
-        {
-          path: '/all-guides',
-          element: <MeetOurAllGuides></MeetOurAllGuides>,
-        },
-        {
-          path: '/secret',
-          element: <PrivateRoute><Secret></Secret></PrivateRoute>,
-        },
-      ]
-    },
-    {
-          path: 'dashboard',
-          element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
-          children: [
-            {
-              path: 'my-bookings',
-              element: <PrivateRoute><MyBookings></MyBookings></PrivateRoute>
-            },
-            {
-              path: 'my-profile',
-              element: <MyProfile></MyProfile>,
-            },
-            {
-              path: 'wishlist',
-              element: <MyWishlist></MyWishlist>,
-            },
-            {
-              path: 'admin-request',
-              element: <AdminRequest></AdminRequest>,
-            },
-            {
-              path: 'admin',
-              element: <AdminProfile></AdminProfile>,
-            },
-            {
-              path: 'add-packages',
-              element: <AddPackages></AddPackages>,
-            },
-            {
-              path: 'manage-users',
-              element: <ManageUsers></ManageUsers>
-            },
+  {
+    path: "/",
+    element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>
+      },
+      {
+        path: "/community",
+        element: <Community></Community>
+      },
+      {
+        path: "/blogs",
+        element: <Blogs></Blogs>
+      },
+      {
+        path: "/about-us",
+        element: <AboutUs></AboutUs>
+      },
+      {
+        path: "/contact-us",
+        element: <ContactUs></ContactUs>
+      },
+      {
+        path: "/login",
+        element: <Login></Login>
+      },
+      {
+        path: "/register",
+        element: <Register></Register>
+      },
+      // {
+      // path: '/dashboard',
+      // element: <PrivateRoute>
+      //   <Dashboard></Dashboard>
+      // </PrivateRoute>
+      // },
+      {
+        path: "/packages/:id",
+        element: <SinglePackage></SinglePackage>,
+        loader: () => fetch("/Packages.json")
+        // loader: ()=>fetch("/tourGuides.json")
+      },
+      {
+        path: "/specific-packs/:tourType",
+        element: <SpecificPackage></SpecificPackage>,
+        loader: () => fetch("/Packages.json")
+        // loader: ()=>fetch("/tourGuides.json")
+      },
+      {
+        path: "/guides/:id",
+        element: <MeetOurGuides></MeetOurGuides>,
+        loader: () => fetch("/tourGuides.json")
+        // loader: ()=>fetch("/tourGuides.json")
+      },
+      {
+        path: "/stories/:id",
+        element: <ViewSingleStory></ViewSingleStory>,
+        loader: () => fetch("https://visit-bd-land-server.vercel.app/stories")
+      },
+      {
+        path: "/all-packages",
+        element: <AllPackages></AllPackages>,
+        loader: () => fetch("/Packages.json")
+        // loader: ()=>fetch("/tourGuides.json")
+      },
+      // {
+      //   path: '/my-profile',
+      //   element: <MyProfile></MyProfile>,
+      // },
 
-        // admin routes
-        // {
-        //   path: 'users',
-        //   element: <AllUsers></AllUsers>
-        // }
+      // {
+      //   path: '/my-bookings',
+      //   element: <MyBookings></MyBookings>,
 
-      ]
-    }
-    
-  ]);
+      //   // loader: ()=>fetch("https://visit-bd-land-server.vercel.app/wishlist")
+      // },
+      {
+        path: "/all-stories",
+        element: <AllStoryPage></AllStoryPage>
+      },
+      {
+        path: "/all-guides",
+        element: <MeetOurAllGuides></MeetOurAllGuides>
+      },
+      {
+        path: "/secret",
+        element: (
+          <PrivateRoute>
+            <Secret></Secret>
+          </PrivateRoute>
+        )
+      }
+    ]
+  },
+  {
+    path: "dashboard",
+    element: (
+      <PrivateRoute>
+        <Dashboard></Dashboard>
+      </PrivateRoute>
+    ),
+    children: [
+      {
+        path: "my-bookings",
+        element: (
+          <PrivateRoute>
+            <MyBookings></MyBookings>
+          </PrivateRoute>
+        )
+      },
+      {
+        path: "my-profile",
+        element: <MyProfile></MyProfile>
+      },
+      {
+        path: "wishlist",
+        element: <MyWishlist></MyWishlist>
+      },
+      {
+        path: "admin-request",
+        element: <AdminRequest></AdminRequest>
+      },
+      {
+        path: "admin",
+        element: <AdminProfile></AdminProfile>
+      },
+      {
+        path: "add-packages",
+        element: <AddPackages></AddPackages>
+      },
+      {
+        path: "manage-users",
+        element: <ManageUsers></ManageUsers>
+      }
 
-  export default router;
+      // admin routes
+      // {
+      //   path: 'users',
+      //   element: <AllUsers></AllUsers>
+      // }
+    ]
+  }
+]);
+
+export default router;

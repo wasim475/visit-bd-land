@@ -2,13 +2,37 @@
 import {Link} from "react-router-dom"
 import Swal from "sweetalert2";
 import UseAxiosS from "../../../../../Providers/Hooks/Axios/UseAxiosS";
-const ViewAllUsers = ({user}) => {
+const ViewAllUsers = ({user, refetch,index}) => {
     const axiosSecure = UseAxiosS();
-    const handleMakeAdmin = ()=>{
-        
+    const handleMakeAdmin = (user)=>{
+        axiosSecure.patch(`/users/admin/${user._id}`)
+        .then(res=>{
+            if(res.data.modifiedCount>0){
+                refetch();
+                Swal.fire({
+                    position: "top-right",
+                    icon: "success",
+                    title: `${user.name} set as admin.`,
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+            }
+        })
     }
-    const handleMakeGuide = ()=>{
-
+    const handleMakeGuide = (user)=>{
+        axiosSecure.patch(`/users/guest/${user._id}`)
+        .then(res=>{
+            if(res.data.modifiedCount>0){
+                refetch();
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: `${user.name} set as Guest.`,
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+            }
+        })
     }
     const handleDelete = (user)=>{
         Swal.fire({
@@ -43,6 +67,7 @@ const ViewAllUsers = ({user}) => {
             <tr>
                 <td>
                     <div className="flex items-center gap-3">
+                    <div><h1 className="font-semibold">{index+1}.</h1></div>
                         <div className="avatar">
                             <div className="mask mask-squircle w-6 h-6">
                                 <img className="rounded-full" src={image} alt="Avatar Tailwind CSS Component" />
@@ -56,8 +81,21 @@ const ViewAllUsers = ({user}) => {
                             
                 </td>
                 <td>
-                    <Link onClick={()=>handleMakeAdmin(user)} className="btn bg-green-400 text-white btn-xs">Make Admin</Link>
-                    <Link onClick={()=>handleMakeGuide(user)} className="btn bg-blue-500 text-white btn-xs">Make Guide</Link>
+                    {
+                        user.role === 'admin'
+                        ?
+                         "Admin"
+                         :
+                         user.role === 'guest'
+                         ?
+                         "Guest"
+                         :
+                         <>
+                         <Link onClick={()=>handleMakeAdmin(user)} className="btn bg-green-400 text-white btn-xs">Make Admin</Link>
+                        <Link onClick={()=>handleMakeGuide(user)} className="btn bg-blue-500 text-white btn-xs">Make Guide</Link>
+                        </>
+                    }
+                    
                 </td>
                 <td>
                 <Link onClick={()=>handleDelete(user)} className="btn bg-red-600 text-white btn-xs">Delete</Link>

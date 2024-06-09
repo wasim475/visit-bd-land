@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import { Link, NavLink, Outlet } from 'react-router-dom';
 import MyProfile from './My profile/MyProfile';
 import MeetOGuides from '../../../pages/Torism and travel section/Meet our guides/MeetOGuides';
+import UseAdmin from '../../../Providers/Hooks/Use Admin/UseAdmin';
+import UseGuest from '../../../Providers/Hooks/Use Guest/UseGuest';
 
 const Dashboard = () => {
-  const isAdmin = true;
+  const [isAdmin] = UseAdmin()
+  const [izGuest] = UseGuest()
   
   let userNavlinks = (
     <>

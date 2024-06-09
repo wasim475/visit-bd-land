@@ -27,8 +27,9 @@ const AuthProvider = ({children}) => {
     let [loading, setLoading]= useState(true)
     // const location = useLocation();
     // const Navigate = useNavigate();
+    // const axiosPublic =UseAxiosPublic()
 
-   const axiosPublic = UseAxiosPublic()
+   const axiosPublic = UseAxiosPublic();
 
     function verifyPassword(password) {
         const uppercaseRegex = /[A-Z]/;
@@ -121,13 +122,28 @@ const AuthProvider = ({children}) => {
     useEffect(()=>{
       const unsubscribe=  onAuthStateChanged(auth, currentUser=>{
             setUser(currentUser)
+            if(currentUser){
+                const userInfo ={
+                    name:currentUser.displayName,
+                    email: currentUser.email,
+                    image: currentUser.photoURL
+                }
+                axiosPublic.post('/jwt',userInfo)
+                .then(res=>{
+                    if(res.data.token){
+                        localStorage.setItem("access-token",res.data.token)
+                    }
+                })
+            }else{
+                localStorage.removeItem("access-token")
+            }
             setLoading(false)
         })
         return ()=>{
             unsubscribe()
         }
 
-    },[])
+    },[axiosPublic])
     let authInfo = {
         user,
         loading,

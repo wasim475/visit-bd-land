@@ -28,7 +28,7 @@ const Banner = () => {
         <SwiperSlide>
           
           <img className="w-full h-full" src={slider1} />
-          <h1 className="text-2xl text-white -mt-40 text-center font-bold ">Sundarban</h1>
+          <h1 className="text-2xl text-white -mt-40 text-center font-bold bg-blue-400">Sundarban</h1>
         </SwiperSlide>
         <SwiperSlide>
           
