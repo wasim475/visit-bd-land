@@ -98,7 +98,7 @@ const ViewBookings = ({ book, Bookings, setBookings }) => {
           > Cancel
           </Link>
           :
-          <Link className="btn bg-green-400 text-white btn-xs">Pay</Link>
+          <Link to={`/payment/${_id}`} className="btn bg-green-400 text-white btn-xs">Pay</Link>
         }
          
         </th>

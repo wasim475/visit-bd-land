@@ -27,6 +27,7 @@ import AddPackages from "../../Components/NavItems/Dashboard/Admin dashboard/Add
 import ManageUsers from "../../Components/NavItems/Dashboard/Admin dashboard/Manage Users/ManageUsers";
 import GuideProfile from "../../Components/NavItems/Dashboard/Guide Dashboard/GuideProfile.jsx/GuideProfile";
 import MyAssignedTours from "../../Components/NavItems/Dashboard/Guide Dashboard/My Assigned Tours/MyAssignedTours";
+import Payment from "../../Components/NavItems/Dashboard/Payment/Payment";
 // import Packages from "../../pages/Torism and travel section/Packages/Packages";
 // import SinglePackage from "../../pages/Torism and travel section/Packages/SinglePackage";
 
@@ -97,7 +98,12 @@ const router = createBrowserRouter([
         path: "/all-packages",
         element: <AllPackages></AllPackages>,
         loader: () => fetch("/Packages.json")
-        // loader: ()=>fetch("/tourGuides.json")
+        },
+        {
+          path: "/payment/:id",
+          element: <Payment></Payment>,
+          loader: ()=>fetch(`https://visit-bd-land-server.vercel.app/bookings`)
+        
       },
       // {
       //   path: '/my-profile',
@@ -158,7 +164,8 @@ const router = createBrowserRouter([
       },
       {
         path: "admin",
-        element: <AdminProfile></AdminProfile>
+        element: <AdminProfile></AdminProfile>,
+        loader: () => fetch(`https://visit-bd-land-server.vercel.app/users`)
       },
       {
         path: "add-packages",

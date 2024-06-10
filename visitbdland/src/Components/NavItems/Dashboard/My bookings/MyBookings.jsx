@@ -13,7 +13,7 @@ const MyBookings = () => {
       .then((resData) => setBookings(resData));
   }, []);
   const Bookings = Bookingsx.filter((booking)=>booking.userEmail===user.email)
-  console.log(Bookings,Bookingsx );
+  // console.log(Bookings,Bookingsx );
   return (
     <div className="mb-10">
       <section className="text-center mb-10">
