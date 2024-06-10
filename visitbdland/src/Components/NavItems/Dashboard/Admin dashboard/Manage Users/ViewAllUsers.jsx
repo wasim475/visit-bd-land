@@ -88,7 +88,7 @@ const ViewAllUsers = ({user, refetch,index}) => {
                          :
                          user.role === 'guest'
                          ?
-                         "Guest"
+                         "Guide"
                          :
                          <>
                          <Link onClick={()=>handleMakeAdmin(user)} className="btn bg-green-400 text-white btn-xs">Make Admin</Link>

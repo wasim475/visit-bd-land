@@ -13,7 +13,8 @@ const ViewBookings = ({ book, Bookings, setBookings }) => {
     photoUrl,
     title,
     _id,
-    image
+    image,
+    status
   } = book;
   // console.log(title);
 
@@ -85,16 +86,21 @@ const ViewBookings = ({ book, Bookings, setBookings }) => {
           </h1>
         </td>
         <td>
-          <br />
+          <h1>{status}</h1>
         </td>
         <th>
-          <Link className="btn bg-green-400 text-white btn-xs">Pay</Link>
+        {
+          status==="In Review" || status === "Rejected"
+          ?
           <Link
             onClick={() => handleCancel(_id)}
             className="btn bg-red-600 text-white btn-xs"
-          >
-            Cancel
+          > Cancel
           </Link>
+          :
+          <Link className="btn bg-green-400 text-white btn-xs">Pay</Link>
+        }
+         
         </th>
       </tr>
     </>

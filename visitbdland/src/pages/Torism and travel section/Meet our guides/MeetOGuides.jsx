@@ -5,13 +5,19 @@ import ViewGuide from '../Packages/singlePackage/ViewGuide';
 import {motion} from "framer-motion"
 
 const MeetOGuides = () => {
-    let [guides, setGuides]= useState([])
+    let [guidess, setGuides]= useState([])
 
     useEffect(()=>{
-      fetch('/tourGuides.json')
+      fetch('https://visit-bd-land-server.vercel.app/users')
       .then(res=>res.json())
       .then(resData=>setGuides(resData))
     },[])
+    // const guides = guidess.users?.find((gds)=>gds.role === 'guest')
+
+    // console.log(guides?.name);
+
+    
+    
     return (
         <div>
             <section className='mb-5'>
@@ -27,7 +33,8 @@ const MeetOGuides = () => {
             >
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                         {
-                          guides.map((guide,index)=>(
+                          guidess.users?.map((guide,index)=>(
+                            guide.role==="guest" &&
                             <ViewGuide key={index} guide={guide}></ViewGuide>
                           ))
                         }

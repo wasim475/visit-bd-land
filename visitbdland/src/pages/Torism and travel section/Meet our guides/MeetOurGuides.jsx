@@ -20,7 +20,7 @@ const MeetOurGuides = () => {
   let { user } = React.useContext(AuthContex);
   const userName = user?.displayName;
 
-  console.log(userName);
+  // console.log(userName);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -67,11 +67,16 @@ const MeetOurGuides = () => {
       .then((resData) => setuserFeedbackData(resData));
   }, []);
 
-  let GuidesData = useLoaderData();
-  // let guidesData = useLoaderData()
+
+  let GuidesInfo = useLoaderData();
+  const GuidesData =GuidesInfo.users
   let { id } = useParams();
-  let guides = GuidesData.find((pack) => pack.id === parseInt(id));
-  // console.log(guides)
+  console.log(id);
+  let guidesx = GuidesData.filter((pack) => pack.role=== "guest");
+  const guides = guidesx.find((gds)=>gds._id===id)
+  console.log(guides);
+ 
+  
   const {
     name,
     specialty,
@@ -80,17 +85,20 @@ const MeetOurGuides = () => {
     image,
     languages,
     skills,
-    education,
+    university,
     favoriteTour,
     email,
+    
     phone,
-    socialMedia,
+    degree,
     certifications,
-    address,
+    Address,
     availability
   } = guides;
+  // console.log(university, degree);
   return (
     <>
+     
       <div className=" px-5 lg:px-60 md:px-40">
         <section className="md:flex gap-x-9">
           <div className=" w-32 h-32 relative  border-4 border-white rounded-full overflow-hidden">
@@ -98,10 +106,10 @@ const MeetOurGuides = () => {
           </div>
           <div>
             <h1 className="text-3xl font-semibold mt-5">{name}</h1>
-            {/* <p className="bg-orange-800 inline-block text-white rounded-full px-2">Experience: {experience}</p> */}
             <ul className="flex gap-x-1 mt-2">
-              {skills.map((skill, index) => (
+              {skills?.map((skill, index) => (
                 <li
+                key={index}
                   title="Skils"
                   className="bg-green-200 px-2 rounded-lg font-medium"
                 >
@@ -118,19 +126,13 @@ const MeetOurGuides = () => {
           <div>
             <h1 className="font-bold text-2xl">Education</h1>
             <ul className="mt-3">
-              {education.map((edu, index) => (
-                <>
-                  <li className="font-medium" key={index}>
-                    {edu.degree}
-                  </li>
-                  <li key={index}>{edu.University}</li>
-                </>
-              ))}
+                  <li className="font-medium">{degree}</li>
+                  <li>{university}</li>
             </ul>
             <div className="mt-3">
               <h1 className="text-xl font-semibold">language</h1>
               <ul className="flex gap-x-1">
-                {languages.map((language, index) => (
+                {languages?.map((language, index) => (
                   <li className="text-green-500 font-semibold" key={index}>
                     {language}
                   </li>
@@ -168,7 +170,7 @@ const MeetOurGuides = () => {
                   gutterBottom
                 >
                   <p className="font-bold">Address:</p>
-                  <p>{address}</p>
+                  <p>{Address}</p>
                 </Typography>
                 <Typography
                   sx={{ fontSize: 14 }}
@@ -196,9 +198,12 @@ const MeetOurGuides = () => {
             <p>{bio}</p>
           </div>
         </section>
-        {/* =========================================================
-                                User review section Start  
-                =============================================================*/}
+       
+
+
+
+
+
         <div>
           <HeadingTitle
             heading={"Share Your Experience"}
@@ -222,7 +227,7 @@ const MeetOurGuides = () => {
                     ></textarea>
                   </label>
                 </div>
-                {/* Rating*/}
+               
                 <select
                   name="rating"
                   required
@@ -241,18 +246,20 @@ const MeetOurGuides = () => {
               <input
                 type="submit"
                 className="btn btn-block bg-green-500 md:text-xl text-white font-semibold hover:text-green-400 hover:border-2 hover:border-green-400 hover:bg-white"
-                value="Book Now"
+                value="Review"
               />
             </div>
           </form>
         </div>
-        {/* =========================================================
-                                User review section End  
-                =============================================================*/}
+   
+
+
+
         <section>
           <UserFeedBack userFeedbackData={userFeedbackData} />
         </section>
       </div>
+       
     </>
   );
 };

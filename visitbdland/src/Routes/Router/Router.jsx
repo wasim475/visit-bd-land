@@ -25,6 +25,8 @@ import AdminRequest from "../../Components/NavItems/Dashboard/Admin request/Admi
 import AdminProfile from "../../Components/NavItems/Dashboard/Admin dashboard/My profile/AdminProfile";
 import AddPackages from "../../Components/NavItems/Dashboard/Admin dashboard/Add Packages/AddPackages";
 import ManageUsers from "../../Components/NavItems/Dashboard/Admin dashboard/Manage Users/ManageUsers";
+import GuideProfile from "../../Components/NavItems/Dashboard/Guide Dashboard/GuideProfile.jsx/GuideProfile";
+import MyAssignedTours from "../../Components/NavItems/Dashboard/Guide Dashboard/My Assigned Tours/MyAssignedTours";
 // import Packages from "../../pages/Torism and travel section/Packages/Packages";
 // import SinglePackage from "../../pages/Torism and travel section/Packages/SinglePackage";
 
@@ -83,7 +85,7 @@ const router = createBrowserRouter([
       {
         path: "/guides/:id",
         element: <MeetOurGuides></MeetOurGuides>,
-        loader: () => fetch("/tourGuides.json")
+        loader: () => fetch(`https://visit-bd-land-server.vercel.app/users`)
         // loader: ()=>fetch("/tourGuides.json")
       },
       {
@@ -165,6 +167,15 @@ const router = createBrowserRouter([
       {
         path: "manage-users",
         element: <ManageUsers></ManageUsers>
+      },
+      {
+        path: "guide",
+        element: <GuideProfile></GuideProfile>,
+        loader: () => fetch("https://visit-bd-land-server.vercel.app/users")
+      },
+      {
+        path: "my-assigned-tours",
+        element: <MyAssignedTours></MyAssignedTours>
       }
 
       // admin routes

@@ -27,15 +27,17 @@ import Swal from "sweetalert2";
 // mui================
 
 const SinglePackage = () => {
-  let [guides, setGuides] = React.useState([]);
+  let [guidess, setGuides] = React.useState([]);
+
 
   React.useEffect(() => {
-    fetch("/tourGuides.json")
+    fetch("https://visit-bd-land-server.vercel.app/users")
       .then((res) => res.json())
       .then((resData) => setGuides(resData));
   }, []);
-
-  const firstThereeGuide = guides.slice(0, 3);
+  const guides = guidess.users;
+  // const guidex = guides?.find((gds)=>gds.role==="guest")
+  const firstThereeGuide = guidess.users?.filter((gds)=>gds.role==="guest");
   // =========Mui=================
   const [expanded, setExpanded] = React.useState(false);
   const handleChange = (panel) => (event, isExpanded) => {
@@ -51,9 +53,11 @@ const SinglePackage = () => {
   let { image, tourType, title, price, gallery, TourDetails, Contents } = packs;
 
   // console.log(guides);
-  let { user } = React.useContext(AuthContex);
+ 
   const [startDate, setStartDate] = React.useState(new Date());
   // console.log("users info",user);
+  const [status, setStatus] = React.useState('In Review')
+const {user} = React.useContext(AuthContex)
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -73,7 +77,9 @@ const SinglePackage = () => {
       userName,
       photoUrl,
       title,
-      image
+      image,
+      status,
+      setStatus
     };
 
     fetch("https://visit-bd-land-server.vercel.app/bookings", {
@@ -271,7 +277,8 @@ const SinglePackage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {firstThereeGuide.map((guide, index) => (
+            {firstThereeGuide?.map((guide, index) => (
+              guide.role ==="guest" &&
               <ViewGuide key={index} guide={guide}></ViewGuide>
             ))}
           </div>
@@ -384,7 +391,8 @@ const SinglePackage = () => {
                         <option disabled selected>
                           Select the guide name
                         </option>
-                        {guides.map((guide, index) => (
+                        {guides?.map((guide, index) => (
+                          guide.role==="guest" &&
                           <option key={index}>{guide.name}</option>
                         ))}
                       </select>

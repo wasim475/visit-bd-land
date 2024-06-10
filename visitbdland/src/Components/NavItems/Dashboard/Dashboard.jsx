@@ -10,7 +10,7 @@ const Dashboard = () => {
   const [izGuest] = UseGuest()
   
   let userNavlinks = (
-    <>
+    <ul id='sidebar'>
       <li className="mb-4">
         <NavLink to="/dashboard/my-profile">My Profile</NavLink>
       </li>
@@ -23,10 +23,10 @@ const Dashboard = () => {
       <li className="mb-4">
         <NavLink to="/dashboard/admin-request">Request to Admin</NavLink>
       </li>   
-    </>
+    </ul>
   );
   let AdminNavlinks = (
-    <>
+    <ul id='sidebar'>
       <li className="mb-4">
         <NavLink to="/dashboard/admin">My Profile</NavLink>
       </li>
@@ -36,7 +36,22 @@ const Dashboard = () => {
       <li className="mb-4">
         <NavLink to="/dashboard/manage-users">Manage Users</NavLink>
       </li>   
-    </>
+    </ul>
+  );
+  let GuideNavlinks = (
+    <ul id='sidebar'>
+      <li className="mb-4">
+        <NavLink to="/dashboard/guide"
+          className={({ isActive, isPending }) =>
+    isPending ? "pending" : isActive ? "active" : ""
+  }
+
+        >My Profile</NavLink>
+      </li>
+      <li className="mb-4">
+        <NavLink to="/dashboard/my-assigned-tours">My Assigned Tours</NavLink>
+      </li>   
+    </ul>
   );
 
   return (
@@ -45,7 +60,15 @@ const Dashboard = () => {
         <div className="container mx-auto flex gap-x-20">
           <Link to="/" className=" font-bold text-sm">Back to <span className='bg-blue-400 text-lg border-2 text-green-900 px-2 rounded-xl'>VisitBDLand</span></Link>
           <h1  className="text-2xl font-bold">{
-            isAdmin?"Admin Dashboard": "User Dashboard"
+            isAdmin
+            ?
+            "Admin Dashboard"
+            :
+            izGuest
+            ?
+            "Guest Dashboard"
+            :
+             "User Dashboard"
           }</h1>
         </div>
       </header>
@@ -54,8 +77,12 @@ const Dashboard = () => {
           <nav className="md:w-1/4 bg-white p-4 rounded shadow-md">
             <ul>
               {
-                isAdmin
+                izGuest
                 ? 
+                GuideNavlinks
+                :
+                isAdmin
+                ?
                 AdminNavlinks
                 :
                 userNavlinks

@@ -1,16 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import ViewMyWishlist from "./ViewMyWishlist";
 import { CiHeart } from "react-icons/ci";
+import { AuthContex } from "../../../../Providers/AuthProvider/AuthProvider";
 
 const MyWishlist = () => {
-  const [myWishlists, setMyWishlists] = useState([]);
+  const {user} = useContext(AuthContex)
+  const [myWishlistsx, setMyWishlists] = useState([]);
 
   useEffect(() => {
     fetch("https://visit-bd-land-server.vercel.app/wishlist")
       .then((res) => res.json())
       .then((resData) => setMyWishlists(resData));
   }, []);
+
+  const myWishlists = myWishlistsx.filter((mywl)=>mywl.userEmail===user.email);
+  console.log(myWishlists);
 
   return (
     <div className="mb-10">

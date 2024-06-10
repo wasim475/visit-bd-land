@@ -1,25 +1,24 @@
 import { Link } from "react-router-dom";
 import { FaRegHeart } from "react-icons/fa";
 import Swal from "sweetalert2";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { motion } from "framer-motion";
+import { AuthContex } from "../../../Providers/AuthProvider/AuthProvider";
 
 const ViewPackages = ({ pack }) => {
   const { image, tourType, title, button, price, id } = pack;
-
+const {user} = useContext(AuthContex);
+const userEmail = user.email;
   const [isWishList, setWishList] = useState(false);
 
   const handleHeart = (tourDatas) => {
     const { image, tourType, title, id, price } = tourDatas;
 
-    const wishlistData = { image, tourType, price, title, id };
+    const wishlistData = { image, tourType, price, title, id ,userEmail};
 
-    fetch("https://visit-bd-land-server.vercel.app/wishlist")
-      .then((res) => res.json())
-      .then((currentWishlist) => {
-        const isExist = currentWishlist.find((item) => item.id === id);
+    
 
-        if (!isExist) {
+        
           fetch("https://visit-bd-land-server.vercel.app/wishlist", {
             method: "POST",
             headers: {
@@ -39,15 +38,8 @@ const ViewPackages = ({ pack }) => {
                 setWishList(true);
               }
             });
-        } else {
-          Swal.fire({
-            title: "Warning!",
-            text: "This Pack is already in your Wishlist",
-            icon: "warning",
-            confirmButtonText: "Exit"
-          });
-        }
-      });
+       
+     
   };
 
   return (

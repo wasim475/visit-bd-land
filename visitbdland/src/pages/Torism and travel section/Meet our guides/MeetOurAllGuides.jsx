@@ -3,15 +3,18 @@ import ViewGuide from '../Packages/singlePackage/ViewGuide';
 import HeadingTitle from '../../../Components/Re-use componets/Heading and title/HeadingTitle';
 
 const MeetOurAllGuides = () => {
-    let [guides, setGuides]= useState([])
+    let [guidess, setGuides]= useState([])
 
     useEffect(()=>{
-      fetch('/tourGuides.json')
+      fetch('https://visit-bd-land-server.vercel.app/users')
       .then(res=>res.json())
       .then(resData=>setGuides(resData))
     },[])
 
+
     return (
+      <>
+
         <div>
             <section className='mb-5'>
                 <HeadingTitle
@@ -22,13 +25,15 @@ const MeetOurAllGuides = () => {
             <section>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                         {
-                          guides.map((guide,index)=>(
+                          guidess.users?.map((guide,index)=>(
+                            guide.role==="guest" &&
                             <ViewGuide key={index} guide={guide}></ViewGuide>
                           ))
                         }
                     </div>
             </section>
         </div>
+      </>
     );
 };
 

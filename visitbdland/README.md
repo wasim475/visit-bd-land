@@ -10,8 +10,8 @@ Currently, two official plugins are available:
 My website Name: Visit BD Land.
 
 Admin;
-username:
-password:
+user-Email: blackk11pearl@visitbdland.com
+password: Bl@ckk129pearl
 
 Live website URL: https://clinquant-toffee-67a43e.netlify.app/
 
