@@ -8,7 +8,7 @@ import { AuthContex } from "../../../Providers/AuthProvider/AuthProvider";
 const ViewPackages = ({ pack }) => {
   const { image, tourType, title, button, price, id } = pack;
 const {user} = useContext(AuthContex);
-const userEmail = user.email;
+const userEmail = user?.email;
   const [isWishList, setWishList] = useState(false);
 
   const handleHeart = (tourDatas) => {

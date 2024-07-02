@@ -1,7 +1,9 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
-import React from 'react';
+import React, { useState } from 'react';
+import { set } from 'react-hook-form';
 
 const ChackOutForm = () => {
+  const [error, setError] = useState('')
     const stripe = useStripe();
     const elements = useElements();
 
@@ -24,8 +26,10 @@ const ChackOutForm = () => {
       
           if (error) {
             console.log('[error]', error);
+            setError(error.message)
           } else {
             console.log('[PaymentMethod]', paymentMethod);
+            setError('')
           }
     }
     return (
@@ -50,6 +54,7 @@ const ChackOutForm = () => {
       <button type="submit" disabled={!stripe}>
         Pay
       </button>
+      <p className='text-red-500'>{error}</p>
     </form>
         </div>
     );
